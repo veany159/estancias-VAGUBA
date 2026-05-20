@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Casa Claude Black — Bahía de Banderas — Estancias Vaguba</title>
+<meta name="description" content="Casa Claude Black en Valle Dorado, Bahía de Banderas. Estancia amueblada lista para entrar. Reserva o consulta condiciones.">
+
+<!-- Open Graph (rellenado dinámicamente por detalle.js) -->
+<meta property="og:type" content="product">
+<meta property="og:locale" content="es_MX">
+<meta property="og:site_name" content="Estancias Vaguba">
+
+<!-- Iconos -->
+<link rel="icon" type="image/png" href="../img/favicon-dark.png">
+<link rel="apple-touch-icon" href="../img/favicon-dark.png">
+
+<!-- Fuentes -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@400;500&display=swap">
+
+<!-- CSS -->
+<link rel="stylesheet" href="../css/variables.css">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/home.css">
+<link rel="stylesheet" href="../css/detalle.css">
+
+</head>
+<body>
+
+  <!-- Navbar (inyectado por nav.js) -->
+  <div id="nav-placeholder"></div>
+
+  <!-- ═══════════════════════════════════════════════════
+       BREADCRUMB
+  ═══════════════════════════════════════════════════ -->
+  <nav class="breadcrumb container" aria-label="breadcrumb">
+    <a href="../index.html" data-i18n="bc.inicio">Inicio</a>
+    <span class="breadcrumb__sep" aria-hidden="true">/</span>
+    <a href="../propiedades.html" data-i18n="bc.propiedades">Propiedades</a>
+    <span class="breadcrumb__sep" aria-hidden="true">/</span>
+    <span class="breadcrumb__current" data-bind="nombre">—</span>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════════
+       HERO de propiedad — galería izquierda, ficha derecha
+  ═══════════════════════════════════════════════════ -->
+  <header class="prop-hero container" aria-labelledby="prop-h">
+    <div class="prop-hero__grid">
+
+      <!-- Columna izquierda: galería -->
+      <div class="prop-hero__gallery">
+        <div class="prop-hero__main-img">
+          <div class="prop-hero__coord">
+            <span class="prop-hero__coord-dot" aria-hidden="true"></span>
+            <span data-bind="coord">—</span>
+          </div>
+          <div class="prop-hero__airbnb-badge" data-show-if="airbnb" hidden>AIRBNB</div>
+          <img data-bind-img="cover" alt="" loading="eager">
+        </div>
+        <div class="prop-hero__thumbs" data-thumbs>
+          <!-- thumbnails inyectados por detalle.js -->
+        </div>
+      </div>
+
+      <!-- Columna derecha: ficha editorial -->
+      <aside class="prop-hero__info">
+        <div class="prop-hero__eyebrow-wrap">
+          <span class="prop-hero__num" data-bind="num">№ 01</span>
+          <span class="prop-hero__loc" data-bind="zona">—</span>
+        </div>
+
+        <h1 id="prop-h" class="prop-hero__title" data-bind="nombre">Cargando…</h1>
+
+        <div class="prop-hero__price-block">
+          <div class="prop-hero__price" data-bind="precio_html">—</div>
+          <div class="prop-hero__price-note" data-bind="precio_nota">—</div>
+        </div>
+
+        <ul class="prop-hero__meta">
+          <li><span class="prop-hero__meta-val" data-bind="huespedes">—</span><span class="prop-hero__meta-lbl" data-i18n="estudio.huespedes">huéspedes</span></li>
+          <li><span class="prop-hero__meta-val" data-bind="habitaciones">—</span><span class="prop-hero__meta-lbl" data-bind="habitaciones_lbl">habitaciones</span></li>
+          <li><span class="prop-hero__meta-val" data-bind="banos">—</span><span class="prop-hero__meta-lbl" data-bind="banos_lbl">baños</span></li>
+        </ul>
+
+        <div class="prop-hero__actions">
+          <a href="#reservar" class="btn btn--primary" data-i18n="prop.cta_reservar">Reservar</a>
+          <a data-bind-href="airbnb" data-show-if="airbnb" hidden target="_blank" rel="noopener" class="btn btn--ghost" data-i18n="estudio.ver_airbnb">Ver en Airbnb</a>
+        </div>
+
+        <p class="prop-hero__condicion" data-bind="condicion_text">—</p>
+      </aside>
+
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════
+       AMENIDADES
+  ═══════════════════════════════════════════════════ -->
+  <section class="section section--sm prop-amenidades" aria-labelledby="amen-h">
+    <div class="container">
+      <div class="section-head__eyebrow-wrap">
+        <span class="section-head__number">— A</span>
+        <span class="section-head__rule" aria-hidden="true"></span>
+      </div>
+      <h2 id="amen-h" class="prop-section__title" data-i18n="estudio.amenidades">Amenidades</h2>
+      <ul class="amen-grid" data-bind="amenidades_list">
+        <!-- inyectado -->
+      </ul>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       DISPONIBILIDAD — calendario (solo si hay airbnb)
+  ═══════════════════════════════════════════════════ -->
+  <section class="section section--sm prop-disp section--alt" aria-labelledby="disp-h" data-show-if="airbnb" hidden>
+    <div class="container">
+      <div class="section-head__eyebrow-wrap">
+        <span class="section-head__number">— B</span>
+        <span class="section-head__rule" aria-hidden="true"></span>
+      </div>
+      <h2 id="disp-h" class="prop-section__title">
+        <span data-i18n="prop.disp_a">Próximas fechas</span>
+        <em data-i18n="prop.disp_b">disponibles</em>
+      </h2>
+      <p class="prop-section__lead" data-i18n="prop.disp_lead">
+        Sincronizado en tiempo real con Airbnb. Las fechas en gris ya están reservadas.
+      </p>
+
+      <div class="calendar-wrap">
+        <div class="calendar" data-calendar>
+          <!-- inyectado por calendar.js -->
+          <div class="calendar__loading" data-i18n="prop.disp_loading">Consultando disponibilidad…</div>
+        </div>
+        <p class="calendar__legend">
+          <span class="cal-dot cal-dot--free"></span> <span data-i18n="prop.cal_free">Disponible</span>
+          &nbsp;·&nbsp;
+          <span class="cal-dot cal-dot--busy"></span> <span data-i18n="prop.cal_busy">Reservado</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       RESERVAR / CONSULTAR — formulario
+  ═══════════════════════════════════════════════════ -->
+  <section class="section prop-reservar" id="reservar" aria-labelledby="res-h">
+    <div class="container">
+      <div class="prop-reservar__grid">
+
+        <div class="prop-reservar__intro">
+          <div class="section-head__eyebrow-wrap">
+            <span class="section-head__number">— C</span>
+            <span class="section-head__rule" aria-hidden="true"></span>
+          </div>
+          <h2 id="res-h" class="prop-section__title">
+            <span data-bind="res_title_a">Reserva esta</span>
+            <em data-bind="res_title_b">estancia</em>
+          </h2>
+          <p class="prop-section__lead" data-i18n="prop.res_lead">
+            Cuéntanos tus fechas y respondemos en menos de 24 horas — fines de semana incluidos. Sin cargos por consultar.
+          </p>
+
+          <div class="prop-reservar__contact">
+            <a href="https://wa.me/523310000000" target="_blank" rel="noopener" class="prop-reservar__contact-link">
+              <span class="prop-reservar__contact-lbl" data-i18n="prop.res_whatsapp">O por WhatsApp</span>
+              <span class="prop-reservar__contact-val">+52 33 1000 0000 →</span>
+            </a>
+            <a href="mailto:hola@estanciasvaguba.mx" class="prop-reservar__contact-link">
+              <span class="prop-reservar__contact-lbl" data-i18n="prop.res_email">O por correo</span>
+              <span class="prop-reservar__contact-val">hola@estanciasvaguba.mx →</span>
+            </a>
+          </div>
+        </div>
+
+        <form class="reserva-form" id="reserva-form" novalidate>
+          <input type="hidden" name="propiedad" data-bind-val="nombre">
+          <input type="hidden" name="slug" data-bind-val="slug">
+
+          <div class="reserva-form__row reserva-form__row--two">
+            <label class="field">
+              <span class="field__label" data-i18n="form.nombre">Nombre</span>
+              <input type="text" name="nombre" required autocomplete="name" data-i18n-ph="form.ph_nombre">
+            </label>
+            <label class="field">
+              <span class="field__label" data-i18n="form.email">Correo</span>
+              <input type="email" name="email" required autocomplete="email" data-i18n-ph="form.ph_email">
+            </label>
+          </div>
+
+          <div class="reserva-form__row reserva-form__row--two">
+            <label class="field">
+              <span class="field__label" data-i18n="prop.form_checkin">Llegada</span>
+              <input type="date" name="checkin" required>
+            </label>
+            <label class="field">
+              <span class="field__label" data-i18n="prop.form_checkout">Salida</span>
+              <input type="date" name="checkout" required>
+            </label>
+          </div>
+
+          <div class="reserva-form__row reserva-form__row--two">
+            <label class="field">
+              <span class="field__label" data-i18n="prop.form_huespedes">Huéspedes</span>
+              <input type="number" name="huespedes" min="1" max="10" value="2" required>
+            </label>
+            <label class="field">
+              <span class="field__label" data-i18n="form.telefono">Teléfono</span>
+              <input type="tel" name="telefono" autocomplete="tel" data-i18n-ph="form.ph_telefono">
+            </label>
+          </div>
+
+          <label class="field">
+            <span class="field__label" data-i18n="form.mensaje">Mensaje</span>
+            <textarea name="mensaje" rows="4" data-i18n-ph="prop.form_ph_mensaje"></textarea>
+          </label>
+
+          <div class="reserva-form__actions">
+            <button type="submit" class="btn btn--primary" data-i18n="prop.form_enviar">Solicitar reserva</button>
+            <span class="reserva-form__status" data-form-status></span>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       PROPIEDADES RELACIONADAS — misma ciudad
+  ═══════════════════════════════════════════════════ -->
+  <section class="section section--sm prop-relacionadas" aria-labelledby="rel-h">
+    <div class="container">
+      <div class="section-head__eyebrow-wrap">
+        <span class="section-head__number">— D</span>
+        <span class="section-head__rule" aria-hidden="true"></span>
+      </div>
+      <div class="prop-relacionadas__header">
+        <h2 id="rel-h" class="prop-section__title">
+          <span data-i18n="prop.rel_a">Otras estancias</span>
+          <em data-bind="rel_ciudad">cerca</em>
+        </h2>
+        <a href="../propiedades.html" class="btn btn--link" data-i18n="prop.rel_ver_todas">Ver todas →</a>
+      </div>
+      <div class="prop-grid" data-related-grid>
+        <!-- inyectado -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer (inyectado por nav.js) -->
+  <div id="footer-placeholder"></div>
+
+  <!-- JSON-LD Schema (inyectado por detalle.js) -->
+  <script type="application/ld+json" id="prop-schema">{}</script>
+
+  <!-- Scripts -->
+  <script>
+  // Bootstrap: si no viene ?slug= en URL, asignarlo desde el filename
+  (function() {
+    const params = new URLSearchParams(location.search);
+    if (!params.get('slug')) {
+      const newUrl = new URL(location.href);
+      newUrl.searchParams.set('slug', 'casa-claude-black');
+      history.replaceState(null, '', newUrl.toString());
+    }
+  })();
+  </script>
+  <script src="../js/i18n.js"></script>
+  <script src="../js/estudios.js"></script>
+  <script src="../js/cards.js"></script>
+  <script src="../js/nav.js"></script>
+  <script src="../js/calendar.js"></script>
+  <script src="../js/detalle.js"></script>
+
+</body>
+</html>

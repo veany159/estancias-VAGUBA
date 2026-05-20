@@ -1,0 +1,51 @@
+# ═══════════════════════════════════════════════════════
+# Estancias Vaguba — Netlify config
+# ═══════════════════════════════════════════════════════
+
+[build]
+  publish    = "."
+  functions  = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# ── Functions: usan ESM nativo
+[functions]
+  node_bundler = "esbuild"
+
+# ── Headers de seguridad y cache
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options       = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy        = "strict-origin-when-cross-origin"
+    Permissions-Policy     = "geolocation=(), microphone=(), camera=()"
+
+[[headers]]
+  for = "/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+# ── URLs limpias para propiedades: /propiedades/casa-heidi → /propiedades/casa-heidi.html
+[[redirects]]
+  from = "/propiedades/:slug"
+  to   = "/propiedades/:slug.html"
+  status = 200
+  force  = false
+
+# ── Alias del feed iCal (para los dueños que quieran probarlo desde el navegador)
+[[redirects]]
+  from = "/ical/*"
+  to   = "/.netlify/functions/ical-proxy?slug=:splat"
+  status = 200

@@ -1,0 +1,107 @@
+/* ═══════════════════════════════════════════════════════
+   CONTACTO — contacto.html
+═══════════════════════════════════════════════════════ */
+
+.contact-main {
+  padding-block: clamp(3rem, 6vw, 5rem) clamp(4rem, 8vw, 7rem);
+  background: var(--bg);
+}
+
+.contact-header {
+  max-width: 760px;
+  margin-bottom: var(--space-3xl);
+}
+.contact-title {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.05;
+  letter-spacing: var(--ls-tight);
+  color: var(--text);
+  margin: var(--space-md) 0 var(--space-lg);
+}
+.contact-title em {
+  font-style: italic;
+  color: var(--terracota);
+}
+.contact-lead {
+  font-size: var(--fs-md);
+  line-height: var(--lh-relaxed);
+  color: var(--text-soft);
+  max-width: 60ch;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.3fr;
+  gap: clamp(var(--space-xl), 5vw, var(--space-3xl));
+  align-items: start;
+}
+@media (max-width: 880px) {
+  .contact-grid { grid-template-columns: 1fr; }
+}
+
+/* Canales directos */
+.contact-channels {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+.contact-channel {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: var(--space-md);
+}
+.contact-channel__lbl {
+  display: block;
+  font-size: var(--fs-2xs);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-xwide);
+  color: var(--mostaza-d);
+  font-weight: 500;
+  margin-bottom: var(--space-2xs);
+}
+.contact-channel__val {
+  display: block;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--fs-xl);
+  color: var(--text);
+  text-decoration: none;
+  margin-bottom: var(--space-xs);
+  transition: color var(--t-fast) var(--ease);
+}
+a.contact-channel__val:hover { color: var(--terracota); }
+.contact-channel__val--plain {
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: var(--fs-md);
+  font-weight: 500;
+}
+.contact-channel__note {
+  font-size: var(--fs-sm);
+  line-height: var(--lh-relaxed);
+  color: var(--text-muted);
+  margin: 0;
+  max-width: 36ch;
+}
+
+/* Form (reusa .reserva-form de detalle.css) */
+.contact-form select {
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--line);
+  border-radius: var(--r-xs);
+  background: var(--marfil);
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  color: var(--text);
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' stroke='%236B655C' stroke-width='1.5' fill='none' stroke-linecap='round'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  cursor: pointer;
+}
+.contact-form select:focus {
+  border-color: var(--terracota);
+  outline: none;
+}

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contacto — Estancias Vaguba</title>
+<meta name="description" content="Escríbenos. Respondemos en menos de 24 horas, fines de semana incluidos. WhatsApp, correo o formulario.">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Contacto — Estancias Vaguba">
+<meta property="og:locale" content="es_MX">
+
+<link rel="icon" type="image/png" href="img/favicon-dark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@400;500&display=swap">
+
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/detalle.css">
+<link rel="stylesheet" href="css/contacto.css">
+
+</head>
+<body>
+
+  <div id="nav-placeholder"></div>
+
+  <main class="contact-main">
+    <div class="container">
+
+      <header class="contact-header">
+        <div class="section-head__eyebrow-wrap">
+          <span class="section-head__number">— 05 / Hablemos</span>
+          <span class="section-head__rule" aria-hidden="true"></span>
+        </div>
+        <h1 class="contact-title">
+          <span data-i18n="contact.title_a">Cuéntanos qué</span>
+          <em data-i18n="contact.title_b">buscas</em>.
+        </h1>
+        <p class="contact-lead" data-i18n="contact.lead">
+          Si tienes dudas de una propiedad específica, mejor envía tu mensaje desde su página — así llega con contexto. Para todo lo demás, este formulario o WhatsApp directo.
+        </p>
+      </header>
+
+      <div class="contact-grid">
+
+        <!-- Columna izquierda: canales directos -->
+        <aside class="contact-channels">
+          <div class="contact-channel">
+            <span class="contact-channel__lbl" data-i18n="contact.ch_whatsapp">WhatsApp</span>
+            <a href="https://wa.me/523310000000" target="_blank" rel="noopener" class="contact-channel__val">+52 33 1000 0000 →</a>
+            <p class="contact-channel__note" data-i18n="contact.ch_whatsapp_note">Para preguntas rápidas y check-ins el día de llegada.</p>
+          </div>
+
+          <div class="contact-channel">
+            <span class="contact-channel__lbl" data-i18n="contact.ch_email">Correo</span>
+            <a href="mailto:hola@estanciasvaguba.mx" class="contact-channel__val">hola@estanciasvaguba.mx →</a>
+            <p class="contact-channel__note" data-i18n="contact.ch_email_note">Para consultas detalladas, contratos o seguimiento.</p>
+          </div>
+
+          <div class="contact-channel">
+            <span class="contact-channel__lbl" data-i18n="contact.ch_hours">Horario</span>
+            <span class="contact-channel__val contact-channel__val--plain">9:00 — 21:00 CT</span>
+            <p class="contact-channel__note" data-i18n="contact.ch_hours_note">Mensajes fuera de horario los respondemos a primera hora del día siguiente.</p>
+          </div>
+
+          <div class="contact-channel">
+            <span class="contact-channel__lbl" data-i18n="contact.ch_zonas">Zonas</span>
+            <span class="contact-channel__val contact-channel__val--plain">Guadalajara · Puerto Vallarta · Bahía de Banderas</span>
+          </div>
+        </aside>
+
+        <!-- Columna derecha: form -->
+        <form class="reserva-form contact-form" id="contact-form" novalidate>
+          <div class="reserva-form__row reserva-form__row--two">
+            <label class="field">
+              <span class="field__label" data-i18n="form.nombre">Nombre</span>
+              <input type="text" name="nombre" required autocomplete="name" data-i18n-ph="form.ph_nombre">
+            </label>
+            <label class="field">
+              <span class="field__label" data-i18n="form.email">Correo</span>
+              <input type="email" name="email" required autocomplete="email" data-i18n-ph="form.ph_email">
+            </label>
+          </div>
+
+          <div class="reserva-form__row reserva-form__row--two">
+            <label class="field">
+              <span class="field__label" data-i18n="form.telefono">Teléfono (opcional)</span>
+              <input type="tel" name="telefono" autocomplete="tel" data-i18n-ph="form.ph_telefono">
+            </label>
+            <label class="field">
+              <span class="field__label" data-i18n="contact.interes">Me interesa</span>
+              <select name="interes">
+                <option value="propiedad" data-i18n="contact.interes_propiedad">Reservar una propiedad</option>
+                <option value="dueno" data-i18n="contact.interes_dueno">Soy dueño y quiero sumarme</option>
+                <option value="otro" data-i18n="contact.interes_otro">Otra cosa</option>
+              </select>
+            </label>
+          </div>
+
+          <label class="field">
+            <span class="field__label" data-i18n="form.mensaje">Mensaje</span>
+            <textarea name="mensaje" rows="5" required data-i18n-ph="contact.ph_mensaje"></textarea>
+          </label>
+
+          <div class="reserva-form__actions">
+            <button type="submit" class="btn btn--primary" data-i18n="form.enviar">Enviar mensaje</button>
+            <span class="reserva-form__status" data-form-status></span>
+          </div>
+        </form>
+
+      </div>
+
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/nav.js"></script>
+  <script>
+    // Submit handler simple — reusa /reservation function con campo "interes"
+    (function () {
+      const form = document.getElementById('contact-form');
+      if (!form) return;
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const status = form.querySelector('[data-form-status]');
+        const btn = form.querySelector('button[type="submit"]');
+        const data = Object.fromEntries(new FormData(form).entries());
+
+        const tr = (k) => (typeof I18N !== 'undefined' && I18N.t) ? I18N.t(k) : k;
+
+        if (!data.nombre || !data.email || !data.mensaje) {
+          status.textContent = tr('form.requerido');
+          status.className = 'reserva-form__status reserva-form__status--err';
+          return;
+        }
+
+        btn.disabled = true;
+        const orig = btn.textContent;
+        btn.textContent = tr('form.enviando');
+
+        try {
+          const res = await fetch('/.netlify/functions/reservation', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              ...data,
+              propiedad_nombre: '(consulta general — contacto)',
+              lang: (typeof I18N !== 'undefined' && I18N.currentLang) || 'es',
+              // Campos mínimos requeridos por el handler — los rellenamos con la fecha de envío
+              checkin: new Date().toISOString().slice(0, 10),
+              checkout: new Date(Date.now() + 86400000).toISOString().slice(0, 10)
+            })
+          });
+          if (!res.ok) throw new Error();
+          status.textContent = tr('form.exito');
+          status.className = 'reserva-form__status reserva-form__status--ok';
+          form.reset();
+        } catch (err) {
+          status.textContent = tr('form.error');
+          status.className = 'reserva-form__status reserva-form__status--err';
+        } finally {
+          btn.disabled = false;
+          btn.textContent = orig;
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

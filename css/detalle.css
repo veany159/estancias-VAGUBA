@@ -1,0 +1,503 @@
+/* ═══════════════════════════════════════════════════════
+   DETALLE DE PROPIEDAD — _template.html
+═══════════════════════════════════════════════════════ */
+
+/* ── Breadcrumb ───────────────────────────────────── */
+.breadcrumb {
+  padding-block: var(--space-md);
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}
+.breadcrumb a {
+  color: var(--text-soft);
+  text-decoration: none;
+  transition: color var(--t-fast) var(--ease);
+}
+.breadcrumb a:hover { color: var(--terracota); }
+.breadcrumb__sep {
+  margin-inline: var(--space-sm);
+  color: var(--niebla);
+}
+.breadcrumb__current { color: var(--text); }
+
+/* ═══════════════════════════════════════════════════════
+   HERO de propiedad — asimétrico
+═══════════════════════════════════════════════════════ */
+
+.prop-hero {
+  padding-block: var(--space-lg) var(--space-3xl);
+}
+.prop-hero__grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: clamp(var(--space-xl), 4vw, var(--space-3xl));
+  align-items: start;
+}
+@media (max-width: 960px) {
+  .prop-hero__grid { grid-template-columns: 1fr; }
+}
+
+/* Columna galería */
+.prop-hero__gallery {
+  position: relative;
+}
+.prop-hero__main-img {
+  position: relative;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  border-radius: var(--r-sm);
+  background: var(--arena);
+  margin-bottom: var(--space-md);
+  cursor: zoom-in;
+}
+.prop-hero__main-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--t-slow) var(--ease);
+}
+.prop-hero__main-img:hover img { transform: scale(1.02); }
+
+.prop-hero__coord {
+  position: absolute;
+  top: var(--space-md);
+  left: var(--space-md);
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  padding: var(--space-2xs) var(--space-sm);
+  background: rgba(245, 239, 224, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: var(--r-pill);
+  font-size: var(--fs-2xs);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--ls-xwide);
+  color: var(--text);
+}
+.prop-hero__coord-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--azulejo);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(31, 78, 122, 0.18);
+}
+.prop-hero__airbnb-badge {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  z-index: 2;
+  padding: var(--space-2xs) var(--space-sm);
+  background: var(--terracota);
+  color: var(--marfil);
+  border-radius: var(--r-pill);
+  font-size: var(--fs-2xs);
+  font-weight: 500;
+  letter-spacing: var(--ls-wide);
+}
+
+/* Thumbnails */
+.prop-hero__thumbs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-sm);
+}
+.prop-hero__thumb {
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: var(--r-xs);
+  background: var(--arena);
+  cursor: pointer;
+  border: 2px solid transparent;
+  padding: 0;
+  transition: all var(--t-fast) var(--ease);
+}
+.prop-hero__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.prop-hero__thumb:hover { transform: translateY(-2px); }
+.prop-hero__thumb--active { border-color: var(--terracota); }
+
+/* Columna info */
+.prop-hero__info {
+  padding-top: var(--space-md);
+  position: sticky;
+  top: calc(var(--nav-height) + var(--space-md));
+}
+@media (max-width: 960px) {
+  .prop-hero__info { position: static; padding-top: 0; }
+}
+
+.prop-hero__eyebrow-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+  flex-wrap: wrap;
+}
+.prop-hero__num {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--terracota);
+  font-size: var(--fs-lg);
+}
+.prop-hero__loc {
+  font-size: var(--fs-2xs);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-xwide);
+  font-weight: 500;
+  color: var(--mostaza-d);
+}
+
+.prop-hero__title {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+  line-height: 1.05;
+  letter-spacing: var(--ls-tight);
+  color: var(--text);
+  margin: 0 0 var(--space-lg);
+}
+
+.prop-hero__price-block {
+  padding-block: var(--space-md);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  margin-bottom: var(--space-lg);
+}
+.prop-hero__price {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: var(--fs-2xl);
+  color: var(--text);
+  line-height: 1.1;
+}
+.prop-hero__price small {
+  font-size: var(--fs-xs);
+  font-style: normal;
+  font-variant: small-caps;
+  letter-spacing: var(--ls-wide);
+  color: var(--text-muted);
+  margin-inline: var(--space-2xs);
+}
+.prop-hero__price-note {
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  margin-top: var(--space-2xs);
+}
+
+.prop-hero__meta {
+  list-style: none;
+  margin: 0 0 var(--space-lg);
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+.prop-hero__meta li {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+}
+.prop-hero__meta-val {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--fs-xl);
+  color: var(--text);
+  line-height: 1;
+}
+.prop-hero__meta-lbl {
+  font-size: var(--fs-2xs);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wide);
+  color: var(--text-muted);
+}
+
+.prop-hero__actions {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-lg);
+}
+
+.prop-hero__condicion {
+  font-size: var(--fs-sm);
+  line-height: var(--lh-relaxed);
+  color: var(--text-soft);
+  padding: var(--space-md);
+  background: var(--arena);
+  border-radius: var(--r-xs);
+  border-left: 3px solid var(--mostaza);
+}
+
+/* ═══════════════════════════════════════════════════════
+   SECCIÓN HEADERS reutilizables
+═══════════════════════════════════════════════════════ */
+
+.prop-section__title {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  line-height: 1.15;
+  color: var(--text);
+  margin: var(--space-sm) 0 var(--space-md);
+}
+.prop-section__title em {
+  font-style: italic;
+  color: var(--terracota);
+}
+.prop-section__lead {
+  font-size: var(--fs-md);
+  line-height: var(--lh-relaxed);
+  color: var(--text-soft);
+  max-width: 56ch;
+  margin-bottom: var(--space-xl);
+}
+
+/* ═══════════════════════════════════════════════════════
+   AMENIDADES
+═══════════════════════════════════════════════════════ */
+
+.amen-grid {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-lg) 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--space-md) var(--space-xl);
+}
+.amen-grid li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) 0;
+  border-bottom: 1px dashed var(--hueso);
+  font-size: var(--fs-sm);
+  color: var(--text-soft);
+}
+.amen-grid li::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: var(--mostaza);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ═══════════════════════════════════════════════════════
+   CALENDARIO
+═══════════════════════════════════════════════════════ */
+
+.calendar-wrap {
+  margin-top: var(--space-xl);
+  max-width: 920px;
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-2xl);
+  padding: var(--space-xl);
+  background: var(--marfil);
+  border-radius: var(--r-sm);
+  border: 1px solid var(--line);
+  min-height: 280px;
+}
+@media (max-width: 700px) {
+  .calendar { grid-template-columns: 1fr; padding: var(--space-lg); }
+}
+
+.calendar__loading {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: var(--space-2xl) 0;
+  color: var(--text-muted);
+  font-style: italic;
+  font-family: var(--font-display);
+}
+
+.cal-month__head {
+  text-align: center;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--fs-lg);
+  color: var(--text);
+  margin-bottom: var(--space-md);
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
+.cal-month__weekdays,
+.cal-month__days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+.cal-month__weekdays {
+  margin-bottom: var(--space-2xs);
+}
+.cal-weekday {
+  text-align: center;
+  font-size: var(--fs-2xs);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wide);
+  color: var(--text-muted);
+  font-weight: 500;
+  padding: var(--space-2xs);
+}
+
+.cal-day {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--fs-sm);
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+  border-radius: var(--r-xs);
+  position: relative;
+}
+.cal-day--empty { visibility: hidden; }
+.cal-day--past { color: var(--niebla); }
+.cal-day--free {
+  background: rgba(232, 201, 138, 0.25);
+  color: var(--text);
+  font-weight: 500;
+}
+.cal-day--busy {
+  background: var(--hueso);
+  color: var(--niebla);
+  text-decoration: line-through;
+  text-decoration-color: var(--piedra);
+}
+.cal-day--today {
+  outline: 1.5px solid var(--terracota);
+  outline-offset: -1.5px;
+  font-weight: 500;
+}
+
+.calendar__legend {
+  margin-top: var(--space-md);
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+.cal-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+.cal-dot--free { background: rgba(232, 201, 138, 0.6); }
+.cal-dot--busy { background: var(--hueso); border: 1px solid var(--piedra); }
+
+/* ═══════════════════════════════════════════════════════
+   RESERVAR
+═══════════════════════════════════════════════════════ */
+
+.prop-reservar {
+  background: var(--bg);
+}
+.prop-reservar__grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(var(--space-xl), 5vw, var(--space-3xl));
+  align-items: start;
+}
+@media (max-width: 880px) {
+  .prop-reservar__grid { grid-template-columns: 1fr; }
+}
+
+.prop-reservar__contact {
+  margin-top: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+.prop-reservar__contact-link {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--line);
+  text-decoration: none;
+  transition: color var(--t-fast) var(--ease);
+}
+.prop-reservar__contact-link:hover { color: var(--terracota); }
+.prop-reservar__contact-lbl {
+  font-size: var(--fs-2xs);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-xwide);
+  color: var(--text-muted);
+  font-weight: 500;
+}
+.prop-reservar__contact-val {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--fs-lg);
+  color: var(--text);
+}
+
+/* Formulario */
+.reserva-form {
+  background: var(--marfil);
+  padding: clamp(var(--space-lg), 3vw, var(--space-2xl));
+  border-radius: var(--r-sm);
+  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+.reserva-form__row--two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+@media (max-width: 540px) {
+  .reserva-form__row--two { grid-template-columns: 1fr; }
+}
+.reserva-form__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-top: var(--space-sm);
+  flex-wrap: wrap;
+}
+.reserva-form__status {
+  font-size: var(--fs-sm);
+  color: var(--text-soft);
+  font-style: italic;
+}
+.reserva-form__status--ok { color: var(--exito); font-style: normal; font-weight: 500; }
+.reserva-form__status--err { color: var(--error); font-style: normal; font-weight: 500; }
+
+/* ═══════════════════════════════════════════════════════
+   RELACIONADAS
+═══════════════════════════════════════════════════════ */
+
+.prop-relacionadas {
+  background: var(--bg-alt);
+  border-top: 1px solid var(--line);
+}
+.prop-relacionadas__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-xl);
+}

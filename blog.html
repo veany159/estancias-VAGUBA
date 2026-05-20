@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bitácora — Estancias Vaguba</title>
+<meta name="description" content="Guías de barrios, vida de nómadas digitales, recomendaciones locales y crónicas del Pacífico mexicano. Próximamente.">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Bitácora — Estancias Vaguba">
+<meta property="og:locale" content="es_MX">
+
+<link rel="icon" type="image/png" href="img/favicon-dark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@400;500&display=swap">
+
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/blog.css">
+
+</head>
+<body>
+
+  <div id="nav-placeholder"></div>
+
+  <main class="blog-main">
+    <div class="container">
+
+      <header class="blog-header">
+        <div class="section-head__eyebrow-wrap">
+          <span class="section-head__number">— 06 / Bitácora</span>
+          <span class="section-head__rule" aria-hidden="true"></span>
+        </div>
+        <h1 class="blog-title">
+          <span data-i18n="blog.title_a">Guías, recomendaciones</span><br>
+          <em data-i18n="blog.title_b">y crónicas locales</em>.
+        </h1>
+        <p class="blog-lead" data-i18n="blog.lead">
+          Estamos preparando contenido para huéspedes que quieren conocer el Pacífico mexicano más allá de la postal. Estas son las series que vienen.
+        </p>
+      </header>
+
+      <!-- Categorías (placeholder cards) -->
+      <ul class="blog-cats">
+
+        <li class="blog-cat">
+          <span class="blog-cat__num">№ 01</span>
+          <h2 class="blog-cat__title" data-i18n="blog.cat1.title">Guías de barrio</h2>
+          <p class="blog-cat__desc" data-i18n="blog.cat1.desc">
+            Dónde comer, qué evitar, los locales que vale la pena conocer. Sin filtros de turista.
+          </p>
+          <span class="blog-cat__badge" data-i18n="blog.coming">Próximamente</span>
+        </li>
+
+        <li class="blog-cat">
+          <span class="blog-cat__num">№ 02</span>
+          <h2 class="blog-cat__title" data-i18n="blog.cat2.title">Vida de nómada digital</h2>
+          <p class="blog-cat__desc" data-i18n="blog.cat2.desc">
+            Cafés con WiFi de verdad, costos reales de vida, lo que nadie te cuenta de mudarte a México.
+          </p>
+          <span class="blog-cat__badge" data-i18n="blog.coming">Próximamente</span>
+        </li>
+
+        <li class="blog-cat">
+          <span class="blog-cat__num">№ 03</span>
+          <h2 class="blog-cat__title" data-i18n="blog.cat3.title">Crónicas del Pacífico</h2>
+          <p class="blog-cat__desc" data-i18n="blog.cat3.desc">
+            Historias de los lugares y las personas que dan textura a esta franja de costa.
+          </p>
+          <span class="blog-cat__badge" data-i18n="blog.coming">Próximamente</span>
+        </li>
+
+      </ul>
+
+      <!-- Subscribe / CTA -->
+      <section class="blog-subscribe">
+        <h2 class="blog-subscribe__title" data-i18n="blog.sub.title">
+          <span>Avisar cuando</span>
+          <em>publiquemos</em>
+        </h2>
+        <p class="blog-subscribe__lead" data-i18n="blog.sub.lead">
+          Si quieres ser de los primeros en leer, déjanos tu correo. Sin spam — un mail cuando haya algo bueno que contar.
+        </p>
+        <form class="blog-subscribe__form" id="subscribe-form" novalidate>
+          <input type="email" name="email" required autocomplete="email"
+                 placeholder="tu@correo.com" aria-label="Correo electrónico">
+          <button type="submit" class="btn btn--primary" data-i18n="blog.sub.cta">Avisarme</button>
+        </form>
+        <p class="blog-subscribe__status" data-form-status></p>
+      </section>
+
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/nav.js"></script>
+  <script>
+    // Subscribe simple — usa reservation function con interes=blog_subscribe
+    (function () {
+      const form = document.getElementById('subscribe-form');
+      if (!form) return;
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const status = form.parentElement.querySelector('[data-form-status]');
+        const data = Object.fromEntries(new FormData(form).entries());
+        if (!data.email) return;
+        try {
+          await fetch('/.netlify/functions/reservation', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              nombre: 'Suscriptor blog',
+              email: data.email,
+              mensaje: 'Quiere ser notificado cuando publiquemos en el blog.',
+              propiedad_nombre: '(suscripción al blog)',
+              checkin: new Date().toISOString().slice(0, 10),
+              checkout: new Date(Date.now() + 86400000).toISOString().slice(0, 10),
+              lang: (typeof I18N !== 'undefined' && I18N.currentLang) || 'es'
+            })
+          });
+          status.textContent = (typeof I18N !== 'undefined' && I18N.t) ? I18N.t('blog.sub.ok') : '¡Gracias! Te avisamos.';
+          status.style.color = 'var(--exito)';
+          form.reset();
+        } catch (err) {
+          status.textContent = (typeof I18N !== 'undefined' && I18N.t) ? I18N.t('form.error') : 'Algo falló.';
+          status.style.color = 'var(--error)';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

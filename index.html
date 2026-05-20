@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es" data-i18n-title="meta.home.title">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estancias Vaguba — Rentas amuebladas en México</title>
+
+  <!-- ── SEO ─────────────────────────────────────── -->
+  <meta name="description"
+        content="Estudios y casas amuebladas en Puerto Vallarta, Guadalajara y Bahía de Banderas. Estancias cortas y largas con alma local."
+        data-i18n-meta="meta.home.desc">
+  <meta name="theme-color" content="#F5EFE0">
+  <link rel="canonical" href="https://estanciasvaguba.mx/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Estancias Vaguba — Rentas amuebladas en México">
+  <meta property="og:description" content="Estudios y casas amuebladas en el Pacífico mexicano. Estancias cortas y largas con alma local.">
+  <meta property="og:url" content="https://estanciasvaguba.mx/">
+  <meta property="og:image" content="https://estanciasvaguba.mx/img/og-home.jpg">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:locale:alternate" content="en_US">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Estancias Vaguba">
+  <meta name="twitter:description" content="Rentas amuebladas en el Pacífico mexicano">
+
+  <!-- ── Favicon ─────────────────────────────────── -->
+  <link rel="icon" type="image/png" href="img/favicon-dark.png">
+  <link rel="apple-touch-icon" href="img/favicon-dark.png">
+
+  <!-- ── Fonts ───────────────────────────────────── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap">
+
+  <!-- ── Hero image preload (LCP) ────────────────── -->
+  <link rel="preload" as="image"
+        href="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&q=80&auto=format&fit=crop">
+
+  <!-- ── Stylesheets ─────────────────────────────── -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/home.css">
+
+  <!-- ── Schema.org · LodgingBusiness ────────────── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    "name": "Estancias Vaguba",
+    "description": "Rentas amuebladas para estancias cortas y largas en el Pacífico mexicano.",
+    "url": "https://estanciasvaguba.mx/",
+    "logo": "https://estanciasvaguba.mx/img/logo-estancias-vaguba.png",
+    "image": "https://estanciasvaguba.mx/img/og-home.jpg",
+    "priceRange": "$$",
+    "areaServed": [
+      { "@type": "City", "name": "Puerto Vallarta", "addressRegion": "Jalisco", "addressCountry": "MX" },
+      { "@type": "City", "name": "Guadalajara",    "addressRegion": "Jalisco", "addressCountry": "MX" },
+      { "@type": "AdministrativeArea", "name": "Bahía de Banderas", "addressRegion": "Nayarit", "addressCountry": "MX" }
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "reservations",
+      "availableLanguage": ["Spanish", "English"],
+      "email": "hola@estanciasvaguba.mx"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ── NAV (inyectado por nav.js) ──────────────────── -->
+  <div id="nav-placeholder"></div>
+
+  <main>
+
+    <!-- ══════════════════════════════════════════════
+         HERO — composición editorial asimétrica
+    ══════════════════════════════════════════════ -->
+    <section class="hero" aria-label="Hero">
+      <div class="container">
+        <div class="hero__grid">
+
+          <!-- Lado izquierdo: tipografía -->
+          <div class="hero__text">
+            <p class="hero__index">
+              <span class="hero__index-num">№ 01</span>
+              <span data-i18n="hero.index">Índice 01 — Estancias en el Pacífico</span>
+            </p>
+
+            <h1 class="hero__title" data-i18n="hero.title">
+              Vive México,<br>sin <em>prisa</em>.
+            </h1>
+
+            <p class="hero__lead" data-i18n="hero.lead">
+              Estudios y casas amuebladas para estadías largas en el Pacífico mexicano. Cada propiedad pensada para que llegues con maleta y empieces a vivir desde el primer día.
+            </p>
+
+            <div class="hero__actions">
+              <a href="propiedades.html" class="btn btn--primary btn--lg" data-i18n="hero.cta_primary">
+                Ver propiedades
+              </a>
+              <a href="nosotros.html" class="btn btn--link" data-i18n="hero.cta_secondary">
+                Cómo funciona
+              </a>
+            </div>
+
+            <div class="hero__meta">
+              <div class="hero__meta-item">
+                <span class="hero__meta-num">10</span>
+                <span class="hero__meta-label" data-i18n="hero.meta1_label">Propiedades</span>
+              </div>
+              <div class="hero__meta-item">
+                <span class="hero__meta-num">3</span>
+                <span class="hero__meta-label" data-i18n="hero.meta2_label">Destinos</span>
+              </div>
+              <div class="hero__meta-item">
+                <span class="hero__meta-num" data-i18n="hero.meta3_value">3 noches</span>
+                <span class="hero__meta-label" data-i18n="hero.meta3_label">Estancia mínima</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Lado derecho: imagen con detalles -->
+          <div class="hero__media">
+            <div class="hero__coord">
+              <span class="hero__coord-dot" aria-hidden="true"></span>
+              <span data-i18n="hero.coord">20.65°N · 105.22°O</span>
+            </div>
+
+            <div class="hero__image-frame">
+              <div class="hero__image"
+                   role="img"
+                   aria-label="Vista del Pacífico mexicano"
+                   data-i18n-aria="img.hero.alt"
+                   style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&q=80&auto=format&fit=crop');">
+              </div>
+            </div>
+
+            <div class="hero__card">
+              <span class="hero__card-eyebrow" data-i18n="hero.card_eyebrow">Destacada</span>
+              <span class="hero__card-title" data-i18n="hero.card_title">Casa Heidi, Bahía de Banderas</span>
+              <span class="hero__card-meta" data-i18n="hero.card_meta">5 huéspedes · 2 hab · A/C</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════
+         02 — PROPIEDADES DESTACADAS
+    ══════════════════════════════════════════════ -->
+    <section class="section" id="propiedades-home" aria-labelledby="props-h">
+      <div class="container">
+
+        <div class="section-head section-head--split fade-in">
+          <div>
+            <span class="section-head__number" data-i18n="section.props.number">— 02 / Selección</span>
+            <h2 id="props-h" class="section-head__title mt-sm" data-i18n="section.props.title">
+              Una selección de<br><em>estancias</em> cuidadas
+            </h2>
+            <p class="section-head__lead mt-md" data-i18n="section.props.lead">
+              Diez propiedades en tres destinos. Estudios de larga estancia en Guadalajara, casas familiares en Bahía y departamentos cerca del malecón en Vallarta.
+            </p>
+          </div>
+          <a href="propiedades.html" class="btn btn--ghost" data-i18n="cta.ver_todas">
+            Ver todas las propiedades
+          </a>
+        </div>
+
+        <!-- Grid (renderizado por cards.js) -->
+        <div class="prop-grid" data-prop-grid="all" data-limit="6"></div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════
+         03 — DESTINOS
+    ══════════════════════════════════════════════ -->
+    <section class="section section--alt" id="destinos-home" aria-labelledby="dest-h">
+      <div class="container">
+
+        <div class="section-head section-head--center fade-in">
+          <span class="section-head__number" data-i18n="section.dest.number">— 03 / Geografía</span>
+          <h2 id="dest-h" class="section-head__title" data-i18n="section.dest.title">
+            Tres rincones del<br><em>Pacífico mexicano</em>
+          </h2>
+          <p class="section-head__lead" data-i18n="section.dest.lead">
+            De la sierra tapatía al océano. Cada destino con un ritmo propio — elige el que vaya con la vida que quieres vivir estos meses.
+          </p>
+        </div>
+
+        <div class="destinos">
+
+          <a href="propiedades.html?ciudad=gdl" class="destino fade-in" style="animation-delay:0ms">
+            <span class="destino__eyebrow" data-i18n="dest.gdl.eyebrow">Guadalajara</span>
+            <h3 class="destino__name" data-i18n="dest.gdl.name">La Perla,<br>Guadalajara</h3>
+            <p class="destino__desc" data-i18n="dest.gdl.desc">
+              Cuatro estudios amueblados en colonia universitaria. Pensados para estudiantes, profesionistas en rotación y nómadas digitales que necesitan base por meses.
+            </p>
+            <span class="destino__count" data-i18n="dest.gdl.count">4 estudios · Renta mensual</span>
+          </a>
+
+          <a href="propiedades.html?ciudad=pv" class="destino fade-in" style="animation-delay:120ms">
+            <span class="destino__eyebrow" data-i18n="dest.pv.eyebrow">Puerto Vallarta</span>
+            <h3 class="destino__name" data-i18n="dest.pv.name">Primavera &amp;<br>Los Sauces</h3>
+            <p class="destino__desc" data-i18n="dest.pv.desc">
+              Cuatro propiedades en Puerto Vallarta: estudios con A/C en Col. Primavera y un departamento familiar de dos recámaras en Fracc. Los Sauces.
+            </p>
+            <span class="destino__count" data-i18n="dest.pv.count">4 propiedades · Renta por noche</span>
+          </a>
+
+          <a href="propiedades.html?ciudad=bahia" class="destino fade-in" style="animation-delay:240ms">
+            <span class="destino__eyebrow" data-i18n="dest.bahia.eyebrow">Bahía de Banderas</span>
+            <h3 class="destino__name" data-i18n="dest.bahia.name">Valle Dorado,<br>Bahía de Banderas</h3>
+            <p class="destino__desc" data-i18n="dest.bahia.desc">
+              Dos casas con cocina completa, A/C y patio en fraccionamiento tranquilo. Ideales para familias, parejas y quienes buscan estancias largas cerca del mar.
+            </p>
+            <span class="destino__count" data-i18n="dest.bahia.count">2 casas · Estancias cortas y largas</span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════
+         04 — POR QUÉ ESTANCIAS VAGUBA
+    ══════════════════════════════════════════════ -->
+    <section class="section section--dark" id="por-que" aria-labelledby="why-h">
+      <div class="container">
+
+        <div class="section-head section-head--center fade-in">
+          <span class="section-head__number" data-i18n="section.por_que.number" style="color:var(--ocre);">— 04 / Por qué</span>
+          <h2 id="why-h" class="section-head__title" data-i18n="section.por_que.title">
+            Pensado para<br><em>quedarse</em>
+          </h2>
+          <p class="section-head__lead" style="color:rgba(255,253,249,0.78);" data-i18n="section.por_que.lead">
+            No somos una plataforma. Somos dueños locales que conocen la colonia, la persona del puesto y el camino al mercado.
+          </p>
+        </div>
+
+        <div class="promesas">
+
+          <div class="promesa fade-in" style="animation-delay:0ms">
+            <span class="promesa__num" data-i18n="promesa.1.num">i.</span>
+            <h3 class="promesa__title" data-i18n="promesa.1.title">
+              Llegas con <em>maleta</em>, no con planes
+            </h3>
+            <p class="promesa__desc" data-i18n="promesa.1.desc">
+              Cada propiedad llega lista. Cocina equipada, WiFi, ropa de cama. La primera comida la haces tú; nosotros nos encargamos del resto.
+            </p>
+          </div>
+
+          <div class="promesa fade-in" style="animation-delay:120ms">
+            <span class="promesa__num" data-i18n="promesa.2.num">ii.</span>
+            <h3 class="promesa__title" data-i18n="promesa.2.title">
+              Dueños <em>locales</em>, sin intermediarios
+            </h3>
+            <p class="promesa__desc" data-i18n="promesa.2.desc">
+              Hablas directo con quien cuida la casa. Sin call centers, sin políticas genéricas de una app global. Respondemos por WhatsApp en horas.
+            </p>
+          </div>
+
+          <div class="promesa fade-in" style="animation-delay:240ms">
+            <span class="promesa__num" data-i18n="promesa.3.num">iii.</span>
+            <h3 class="promesa__title" data-i18n="promesa.3.title">
+              Estadías <em>flexibles</em>, por noche o por mes
+            </h3>
+            <p class="promesa__desc" data-i18n="promesa.3.desc">
+              Desde 3 noches en Vallarta hasta 6 meses en Guadalajara. Precios honestos, sin tarifas escondidas. Lo que ves es lo que pagas.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════
+         05 — CTA FINAL
+    ══════════════════════════════════════════════ -->
+    <section class="cta-final" aria-labelledby="cta-h">
+      <div class="container">
+        <div class="cta-final__inner fade-in">
+          <span class="section-head__number" data-i18n="cta_final.number">— 05 / Empieza aquí</span>
+          <h2 id="cta-h" class="cta-final__title" data-i18n="cta_final.title">
+            ¿Pensando en venirte<br>una <em>temporada</em>?
+          </h2>
+          <p class="cta-final__lead" data-i18n="cta_final.lead">
+            Cuéntanos qué buscas y en qué fechas. Te respondemos en menos de 24 horas — incluyendo fines de semana.
+          </p>
+          <div class="cta-final__actions">
+            <a href="contacto.html" class="btn btn--primary btn--lg" data-i18n="cta_final.cta_primary">
+              Escríbenos
+            </a>
+            <a href="propiedades.html" class="btn btn--ghost" data-i18n="cta_final.cta_secondary">
+              Ver propiedades
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ──────────────────────────────────────── -->
+  <div id="footer-placeholder"></div>
+
+  <!-- ── Scripts ─────────────────────────────────────── -->
+  <script src="js/i18n.js"></script>
+  <script src="js/estudios.js"></script>
+  <script src="js/cards.js"></script>
+  <script src="js/nav.js"></script>
+  <script>
+    // Renderizar las primeras 6 propiedades en el grid del home
+    document.addEventListener('DOMContentLoaded', () => {
+      const grid = document.querySelector('[data-prop-grid="all"]');
+      if (!grid || typeof ESTUDIOS === 'undefined') return;
+      const list = ESTUDIOS.slice(0, parseInt(grid.dataset.limit, 10) || 6);
+      CARDS.renderGrid(list, grid);
+    });
+  </script>
+
+</body>
+</html>
