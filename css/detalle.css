@@ -99,13 +99,19 @@
   letter-spacing: var(--ls-wide);
 }
 
-/* Thumbnails */
+/* Thumbnails — galería extendida (hasta 9 thumbnails) */
 .prop-hero__thumbs {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-sm);
 }
+@media (min-width: 760px) {
+  .prop-hero__thumbs {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
 .prop-hero__thumb {
+  position: relative;
   aspect-ratio: 1;
   overflow: hidden;
   border-radius: var(--r-xs);
@@ -123,6 +129,38 @@
 }
 .prop-hero__thumb:hover { transform: translateY(-2px); }
 .prop-hero__thumb--active { border-color: var(--terracota); }
+
+/* Badge sutil indicando que la foto tiene un caption */
+.prop-hero__thumb-badge {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background: var(--mostaza);
+  color: var(--marfil);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 600;
+  z-index: 2;
+  box-shadow: 0 1px 3px rgba(0,0,0,.25);
+}
+
+/* Caption mostrado debajo de la portada cuando aplica */
+.prop-hero__main-caption {
+  margin-top: var(--space-xs);
+  padding: var(--space-xs) var(--space-sm);
+  background: var(--arena);
+  border-left: 3px solid var(--mostaza);
+  font-size: var(--fs-xs);
+  font-style: italic;
+  color: var(--text-soft);
+  line-height: 1.4;
+  border-radius: var(--r-xs);
+}
 
 /* Columna info */
 .prop-hero__info {
@@ -501,3 +539,4 @@
   flex-wrap: wrap;
   margin-bottom: var(--space-xl);
 }
+
