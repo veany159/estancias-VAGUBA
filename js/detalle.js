@@ -54,20 +54,38 @@
     return parts.length ? parts.join(' · ') : tr('estudio.disponible');
   }
 
-  // ── Imagen cover (Unsplash determinista igual que cards.js) ──
+  // ── Imagen cover (foto 1 si tiene reales, Unsplash si no) ──
   function coverFor(estudio) {
     if (typeof CARDS !== 'undefined' && CARDS.fallbackImg) {
-      return CARDS.fallbackImg(estudio, 1600);
+      return CARDS.fallbackImg(estudio, 1);
     }
     return 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1600&q=80&auto=format&fit=crop';
   }
 
   function thumbsFor(estudio) {
-    // Generamos 4 variantes diferentes (mismo seed con sufijo)
-    const base = coverFor(estudio);
+    // Si tiene fotos reales, devolvemos TODAS (hasta 9) con sus captions.
+    // Cada item: { src, caption, index }
+    if (typeof CARDS !== 'undefined' && CARDS.hasRealPhotos && CARDS.hasRealPhotos[estudio.slug]) {
+      const max = CARDS.hasRealPhotos[estudio.slug];
+      const variants = [];
+      // Empezamos en foto 2 (la 1 es la portada que ya se muestra grande)
+      for (let i = 2; i <= max && variants.length < 9; i++) {
+        variants.push({
+          src: CARDS.fallbackImg(estudio, i),
+          caption: CARDS.captionFor ? CARDS.captionFor(estudio.slug, i) : '',
+          index: i
+        });
+      }
+      return variants;
+    }
+    // Fallback: 4 placeholders variados con seed distinto
     const variants = [];
     for (let i = 0; i < 4; i++) {
-      variants.push(coverFor({ ...estudio, id: `${estudio.id}-v${i}` }));
+      variants.push({
+        src: coverFor({ ...estudio, id: `${estudio.id}-v${i}` }),
+        caption: '',
+        index: i + 2
+      });
     }
     return variants;
   }
@@ -162,26 +180,58 @@
       amenList.innerHTML = estudio.amenidades.map(a => `<li>${a}</li>`).join('');
     }
 
-    // ── Thumbnails ───────────────────────────────
+    // ── Thumbnails (galería extendida con captions) ──
     const thumbs = qs('[data-thumbs]');
     if (thumbs) {
       const variants = thumbsFor(estudio);
-      thumbs.innerHTML = variants.map((src, i) => `
-        <button type="button" class="prop-hero__thumb ${i === 0 ? 'prop-hero__thumb--active' : ''}"
-                data-thumb-idx="${i}" aria-label="Foto ${i + 1}">
-          <img src="${src}" alt="" loading="lazy">
-        </button>
-      `).join('');
+      thumbs.innerHTML = variants.map((v, i) => {
+        const captionBadge = v.caption
+          ? `<span class="prop-hero__thumb-badge" title="${v.caption}">★</span>`
+          : '';
+        return `
+          <button type="button" class="prop-hero__thumb ${i === 0 ? 'prop-hero__thumb--active' : ''}"
+                  data-thumb-idx="${i}"
+                  data-thumb-caption="${v.caption || ''}"
+                  aria-label="Foto ${v.index}${v.caption ? ' — ' + v.caption : ''}">
+            <img src="${v.src}" alt="${v.caption || ''}" loading="lazy">
+            ${captionBadge}
+          </button>
+        `;
+      }).join('');
 
       const mainImg = qs('.prop-hero__main-img img');
+      const captionEl = qs('[data-main-caption]') || (() => {
+        // Inyectar elemento de caption si no existe en el template
+        const el = document.createElement('div');
+        el.className = 'prop-hero__main-caption';
+        el.setAttribute('data-main-caption', '');
+        const mainContainer = qs('.prop-hero__main-img');
+        if (mainContainer && mainContainer.parentNode) {
+          mainContainer.parentNode.insertBefore(el, mainContainer.nextSibling);
+        }
+        return el;
+      })();
+
       thumbs.addEventListener('click', (e) => {
         const btn = e.target.closest('.prop-hero__thumb');
         if (!btn || !mainImg) return;
         const idx = parseInt(btn.dataset.thumbIdx, 10);
-        mainImg.src = variants[idx];
+        const v = variants[idx];
+        mainImg.src = v.src;
+        mainImg.alt = v.caption || estudio.nombre;
+        if (captionEl) {
+          captionEl.textContent = v.caption || '';
+          captionEl.style.display = v.caption ? 'block' : 'none';
+        }
         qsa('.prop-hero__thumb', thumbs).forEach(t => t.classList.remove('prop-hero__thumb--active'));
         btn.classList.add('prop-hero__thumb--active');
       });
+
+      // Iniciar con caption vacío (la portada no lleva caption)
+      if (captionEl) {
+        captionEl.textContent = '';
+        captionEl.style.display = 'none';
+      }
     }
 
     // ── Calendario ────────────────────────────────
@@ -345,3 +395,4 @@
     init();
   }
 })();
+
