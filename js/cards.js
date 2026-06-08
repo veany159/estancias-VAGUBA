@@ -14,11 +14,16 @@ const CARDS = {
      y agregar el slug aquí con el número total.
   ═══════════════════════════════════════════════════════ */
   hasRealPhotos: {
-    'casa-heidi':              10,
-    'casa-claude-black':        7,
-    'estudio-a-el-cenzontle':  10,
-    'estudio-b-gdl':            8,
-    'estudio-c-gdl':            9
+    'casa-heidi':                               10,
+    'casa-claude-black':                         7,
+    'estudio-a-el-cenzontle':                   10,
+    'estudio-b-gdl':                             8,
+    'estudio-c-gdl':                             9,
+    'estudio-d-gdl':                             8,
+    'estudio-a-black-puerto-vallarta':           6,
+    'estudio-b-black-puerto-vallarta':           6,
+    'estudio-c-black-puerto-vallarta':           7,
+    'departamento-los-sauces-puerto-vallarta':  10
   },
 
   /* Captions opcionales por foto: { slug: { numero: textoES } }
@@ -36,6 +41,10 @@ const CARDS = {
     'estudio-c-gdl': {
       8: 'Sala común — espacio compartido entre los estudios',
       9: 'Sala común — espacio compartido entre los estudios'
+    },
+    'estudio-d-gdl': {
+      7: 'Sala común — espacio compartido entre los estudios',
+      8: 'Sala común — espacio compartido entre los estudios'
     }
   },
 
