@@ -151,3 +151,60 @@
   letter-spacing: var(--ls-wide);
 }
 .barrio--alt .barrio__tags li { background: var(--bg); }
+
+/* ── Cerca de aquí (anclas locales) ─────────────────── */
+.barrio__cerca {
+  margin: 0 0 var(--space-lg);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--line);
+}
+.barrio__cerca-title {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: var(--fs-lg);
+  color: var(--text);
+  margin: 0 0 var(--space-md);
+}
+.barrio__cerca-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: var(--space-sm);
+  max-width: 56ch;
+}
+.barrio__cerca-list li {
+  font-size: var(--fs-base);
+  line-height: var(--lh-normal);
+  color: var(--text-soft);
+}
+.barrio__cerca-l {
+  display: block;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wide);
+  color: var(--mostaza-d);
+  margin-bottom: var(--space-2xs);
+}
+
+/* ── Foto secundaria dentro del cuerpo (p. ej. mercado) ── */
+.barrio__detail {
+  margin: 0 0 var(--space-lg);
+  max-width: 56ch;
+}
+.barrio__detail img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  border-radius: var(--r-sm);
+}
+.barrio__detail figcaption {
+  font-size: var(--fs-xs);
+  font-style: italic;
+  color: var(--text-muted);
+  margin-top: var(--space-2xs);
+}
