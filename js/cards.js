@@ -6,10 +6,60 @@
 
 const CARDS = {
 
-  /* Imagen de fallback por destino — Unsplash libres de derechos.
-     Cuando la marca tenga fotos propias se sustituyen aquí. */
-  fallbackImg(estudio) {
-    // Indexados por ciudad para variedad visual entre cards.
+  /* ═══════════════════════════════════════════════════════
+     Propiedades con fotos reales en /img/propiedades/{slug}-N.jpg
+     Valor = número total de fotos disponibles para esa propiedad.
+     Para agregar fotos de una propiedad nueva: subir las fotos a
+     /img/propiedades/ con el formato {slug}-1.jpg ... {slug}-N.jpg
+     y agregar el slug aquí con el número total.
+  ═══════════════════════════════════════════════════════ */
+  hasRealPhotos: {
+    'casa-heidi':              10,
+    'casa-claude-black':        7,
+    'estudio-a-el-cenzontle':  10,
+    'estudio-b-gdl':            8,
+    'estudio-c-gdl':            9
+  },
+
+  /* Captions opcionales por foto: { slug: { numero: textoES } }
+     El sitio muestra el caption en español por defecto.
+     Si el slug/foto no tiene caption, no se muestra etiqueta. */
+  photoCaptions: {
+    'estudio-a-el-cenzontle': {
+      9:  'Sala común — espacio compartido entre los estudios',
+      10: 'Sala común — espacio compartido entre los estudios'
+    },
+    'estudio-b-gdl': {
+      7: 'Sala común — espacio compartido entre los estudios',
+      8: 'Sala común — espacio compartido entre los estudios'
+    },
+    'estudio-c-gdl': {
+      8: 'Sala común — espacio compartido entre los estudios',
+      9: 'Sala común — espacio compartido entre los estudios'
+    }
+  },
+
+  /* Devuelve el caption de una foto, o cadena vacía */
+  captionFor(slug, photoIndex) {
+    const c = this.photoCaptions[slug];
+    return c && c[photoIndex] ? c[photoIndex] : '';
+  },
+
+  /* Devuelve la URL relativa correcta según contexto (raíz vs /propiedades/) */
+  imgPath(filename) {
+    const inPropDir = /\/propiedades\//.test(location.pathname);
+    return inPropDir ? `../img/propiedades/${filename}` : `img/propiedades/${filename}`;
+  },
+
+  /* Imagen de portada o de cualquier índice.
+     Si la propiedad tiene fotos reales, retorna la del índice solicitado.
+     Si no, usa Unsplash determinista por ciudad. */
+  fallbackImg(estudio, photoIndex = 1) {
+    if (this.hasRealPhotos[estudio.slug]) {
+      const max = this.hasRealPhotos[estudio.slug];
+      const idx = Math.min(Math.max(photoIndex, 1), max);
+      return this.imgPath(`${estudio.slug}-${idx}.jpg`);
+    }
     const pool = {
       pv: [
         'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=900&q=80',
@@ -29,7 +79,6 @@ const CARDS = {
       ]
     };
     const arr = pool[estudio.ciudad] || pool.pv;
-    // Hash determinista del id → siempre la misma imagen para la misma propiedad
     let h = 0;
     for (let i = 0; i < estudio.id.length; i++) h = (h * 31 + estudio.id.charCodeAt(i)) & 0xffffffff;
     return arr[Math.abs(h) % arr.length];
