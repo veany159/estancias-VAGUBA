@@ -768,8 +768,18 @@ const I18N = {
   },
 
   _bindToggle() {
-    document.querySelectorAll('.lang-toggle').forEach(btn => {
-      btn.addEventListener('click', () => this.toggle());
+    // Delegación: el botón .lang-toggle lo inyecta nav.js DESPUÉS de este init,
+    // así que escuchamos el clic a nivel documento (funciona sin importar cuándo
+    // se inyecte el nav). Solo enlazamos una vez.
+    if (this._toggleBound) return;
+    this._toggleBound = true;
+    document.addEventListener('click', (e) => {
+      const t = e.target;
+      const btn = (t instanceof Element) ? t.closest('.lang-toggle') : null;
+      if (btn) {
+        e.preventDefault();
+        this.toggle();
+      }
     });
   }
 };
