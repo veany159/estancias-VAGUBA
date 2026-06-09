@@ -1,0 +1,28 @@
+# Estancias Vaguba
+
+> Rentas amuebladas directas, sin comisiones de plataforma, para estancias
+> cortas y largas (desde 3 noches hasta 3–6 meses) en Puerto Vallarta,
+> Bahía de Banderas (Nayarit) y Guadalajara, México. Equipo local que opera
+> directo; reservación directa con conocimiento de barrio real.
+
+## Principales
+- [Propiedades](https://estanciasvaguba.com/propiedades.html): Catálogo de 10 estudios y casas amuebladas en Vallarta, Bahía de Banderas y Guadalajara.
+- [Barrios](https://estanciasvaguba.com/barrios.html): Guía de las zonas, con recomendaciones locales (mercados, comida, playas).
+- [Nosotros](https://estanciasvaguba.com/nosotros.html): Equipo local que opera directo, sin plataforma.
+- [Bitácora](https://estanciasvaguba.com/blog.html): Guías y crónicas locales del Pacífico mexicano.
+- [Contacto](https://estanciasvaguba.com/contacto.html): Reservación directa.
+
+## Propiedades
+- [Estudio A — El Cenzontle (Guadalajara)](https://estanciasvaguba.com/propiedades/estudio-a-el-cenzontle.html)
+- [Estudio B (Guadalajara)](https://estanciasvaguba.com/propiedades/estudio-b-gdl.html)
+- [Estudio C (Guadalajara)](https://estanciasvaguba.com/propiedades/estudio-c-gdl.html)
+- [Estudio D (Guadalajara)](https://estanciasvaguba.com/propiedades/estudio-d-gdl.html)
+- [Casa Claude Black (Bahía de Banderas)](https://estanciasvaguba.com/propiedades/casa-claude-black.html)
+- [Casa Heidi (Bahía de Banderas)](https://estanciasvaguba.com/propiedades/casa-heidi.html)
+- [Estudio A Black (Puerto Vallarta)](https://estanciasvaguba.com/propiedades/estudio-a-black-puerto-vallarta.html)
+- [Estudio B Black (Puerto Vallarta)](https://estanciasvaguba.com/propiedades/estudio-b-black-puerto-vallarta.html)
+- [Estudio C Black (Puerto Vallarta)](https://estanciasvaguba.com/propiedades/estudio-c-black-puerto-vallarta.html)
+- [Departamento Los Sauces (Puerto Vallarta)](https://estanciasvaguba.com/propiedades/departamento-los-sauces-puerto-vallarta.html)
+
+## Contacto
+- Correo: estanciasvaguba@gmail.com
