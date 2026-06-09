@@ -103,8 +103,8 @@ const NAV = {
       <div>
         <div class="footer__heading" data-i18n="footer.contacto_titulo">Contacto</div>
         <div class="footer__links">
-          <a href="mailto:hola@estanciasvaguba.mx" class="footer__link">hola@estanciasvaguba.mx</a>
-          <a href="https://wa.me/523310000000" class="footer__link" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="mailto:estanciasvaguba@gmail.com" class="footer__link">estanciasvaguba@gmail.com</a>
+          <a href="https://wa.me/523221399526" class="footer__link" target="_blank" rel="noopener">WhatsApp</a>
         </div>
       </div>
 
