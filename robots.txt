@@ -1,5 +1,50 @@
+# Estancias Vaguba — robots.txt
+# Permitimos el contenido público a buscadores y a crawlers de IA,
+# para aparecer y ser citados en respuestas generativas.
+
 User-agent: *
 Allow: /
 Disallow: /.netlify/
 
-Sitemap: https://estanciasvaguba.mx/sitemap.xml
+# ── Buscadores tradicionales ───────────────────────────────
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# ── Crawlers de IA: búsqueda / recuperación en vivo ────────
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# ── Opt-in de entrenamiento de IA ──────────────────────────
+# (Quita estos dos bloques si NO quieres que tu contenido se use
+#  para entrenar modelos. Dejarlos = permitido.)
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://estanciasvaguba.com/sitemap.xml
