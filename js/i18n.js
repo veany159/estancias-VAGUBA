@@ -191,10 +191,10 @@ const TRANSLATIONS = {
     "bar.pv.cerca4_t": "Quince minutos al malecón y a las playas.",
     "bar.pv.mercado_cap": "Fruta de temporada en los mercados de la zona.",
     "bar.cta_ver":             "Ver propiedades →",
-    "bar.cta.title_a":         "¿Cuál encaja con",
-    "bar.cta.title_b":         "tu temporada",
-    "bar.cta.lead":            "Si no estás seguro de qué barrio elegir, escríbenos. Conocemos los tres y sabemos qué tipo de huésped se asienta mejor en cada uno.",
-    "bar.cta.contact":         "Pedir recomendación",
+    "bar.cta.title_a":         "¿Qué barrio",
+    "bar.cta.title_b":         "va contigo",
+    "bar.cta.lead":            "¿Aún no sabes cuál elegir? Platícanos un poco de tus planes y te decimos cuál se adapta mejor a ti.",
+    "bar.cta.contact":         "Platícanos tus planes",
     "bar.cta.todas":           "Ver todas las propiedades",
 
     /* ── Nosotros (nosotros.html) ────────────────── */
@@ -527,10 +527,10 @@ const TRANSLATIONS = {
     "bar.pv.cerca4_t": "Fifteen minutes to the malecón and the beaches.",
     "bar.pv.mercado_cap": "Seasonal fruit at the area's markets.",
     "bar.cta_ver":             "View properties →",
-    "bar.cta.title_a":         "Which fits",
-    "bar.cta.title_b":         "your season",
-    "bar.cta.lead":            "If you're not sure which neighborhood to choose, write to us. We know all three and can tell you which type of guest settles best in each.",
-    "bar.cta.contact":         "Ask for a recommendation",
+    "bar.cta.title_a":         "Which neighborhood",
+    "bar.cta.title_b":         "fits you",
+    "bar.cta.lead":            "Not sure which one to choose? Tell us a bit about your plans and we'll tell you which one fits you best.",
+    "bar.cta.contact":         "Tell us your plans",
     "bar.cta.todas":           "View all properties",
 
     /* ── About (nosotros.html) ───────────────────── */
@@ -779,4 +779,5 @@ if (document.readyState === 'loading') {
 } else {
   I18N.init();
 }
+
 
