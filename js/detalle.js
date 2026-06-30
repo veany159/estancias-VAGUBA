@@ -206,6 +206,29 @@
       }
     }
 
+    // ── Renta mensual: aviso opcional ──
+    if (estudio.renta_mensual) {
+      const priceBlock = qs('.prop-hero__price-block');
+      let nota = qs('.prop-hero__mensual');
+      if (!nota && priceBlock) {
+        nota = document.createElement('p');
+        nota.className = 'prop-hero__mensual';
+        nota.style.cssText = 'margin:.7rem 0 0;padding:.5rem .85rem;display:inline-block;font-size:.9rem;line-height:1.35;color:var(--color-azulejo,#1F4E7A);background:rgba(31,78,122,.07);border-radius:4px;';
+        priceBlock.appendChild(nota);
+      }
+      const applyMensual = () => {
+        const en = (typeof I18N !== 'undefined' && I18N.currentLang === 'en');
+        if (nota) nota.textContent = en
+          ? 'Also available monthly — ask us about the monthly rate.'
+          : 'También se renta por mes — pregunta por la tarifa mensual.';
+      };
+      applyMensual();
+      if (!window._mensualLangBound) {
+        window._mensualLangBound = true;
+        window.addEventListener('ev:langchange', applyMensual);
+      }
+    }
+
     // ── Amenidades ────────────────────────────────
     const amenList = qs('[data-bind="amenidades_list"]');
     if (amenList && Array.isArray(estudio.amenidades)) {

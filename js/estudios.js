@@ -154,9 +154,10 @@ const ESTUDIOS = [
     ciudad:   "bahia",
     zona:     "Valle Dorado, Bahía de Banderas",
     tipo:     "casa",
-    precio:   820,
+    precio:   800,
     unidad:   "noche",
     airbnb:   "https://www.airbnb.mx/rooms/1099577074845505541",
+    renta_mensual: true,
     fotos:    "https://drive.google.com/drive/folders/1z4Eou80puiRgyaGdBxzn7blhGX72xIkI",
     amenidades: [
       "WiFi",
@@ -170,7 +171,8 @@ const ESTUDIOS = [
       "Microondas",
       "Estufa",
       "Cafetera",
-      "Llegada autónoma"
+      "Llegada autónoma",
+      "Boiler de paso"
     ],
     condiciones: {
       huespedes:   4,
@@ -186,13 +188,14 @@ const ESTUDIOS = [
   {
     id:       "casa-heidi",
     slug:     "casa-heidi",
-    nombre:   "Casa Heidi",
+    nombre:   "Casa Elisa",
     ciudad:   "bahia",
     zona:     "Valle Dorado, Bahía de Banderas",
     tipo:     "casa",
-    precio:   916.67,
+    precio:   800,
     unidad:   "noche",
     airbnb:   "https://www.airbnb.mx/rooms/51508478",
+    renta_mensual: true,
     fotos:    null,
     amenidades: [
       "WiFi",
@@ -206,7 +209,8 @@ const ESTUDIOS = [
       "Microondas",
       "Estufa",
       "Cafetera",
-      "Llegada autónoma"
+      "Llegada autónoma",
+      "Boiler semiautomático"
     ],
     condiciones: {
       huespedes:   5,
