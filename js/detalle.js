@@ -174,6 +174,38 @@
       if (estudio[key]) el.hidden = false;
     });
 
+    // ── Disponibilidad: aviso "Ocupada por el momento" ──
+    if (estudio.disponible === false) {
+      const actions = qs('.prop-hero__actions');
+      let aviso = qs('.prop-hero__ocupada');
+      if (!aviso && actions) {
+        aviso = document.createElement('div');
+        aviso.className = 'prop-hero__ocupada';
+        aviso.setAttribute('role', 'status');
+        aviso.style.cssText = 'margin:0 0 1.1rem;padding:.75rem 1rem;border-left:3px solid var(--color-teja,#8B2E0A);background:rgba(139,46,10,.07);border-radius:4px;line-height:1.4;';
+        actions.parentNode.insertBefore(aviso, actions);
+      }
+      const cta = actions ? actions.querySelector('.btn--primary') : null;
+      if (cta) cta.removeAttribute('data-i18n');
+      const applyOcupada = () => {
+        const en = (typeof I18N !== 'undefined' && I18N.currentLang === 'en');
+        if (aviso) {
+          aviso.innerHTML =
+            '<strong style="color:var(--color-teja,#8B2E0A);">' +
+            (en ? 'Currently booked' : 'Ocupada por el momento') + '</strong><br>' +
+            '<span style="color:var(--text-muted,#6b6b6b);">' +
+            (en ? 'Message us about future availability.' : 'Escríbenos para conocer disponibilidad futura.') +
+            '</span>';
+        }
+        if (cta) cta.textContent = en ? 'Check availability' : 'Consultar disponibilidad';
+      };
+      applyOcupada();
+      if (!window._ocupadaLangBound) {
+        window._ocupadaLangBound = true;
+        window.addEventListener('ev:langchange', applyOcupada);
+      }
+    }
+
     // ── Amenidades ────────────────────────────────
     const amenList = qs('[data-bind="amenidades_list"]');
     if (amenList && Array.isArray(estudio.amenidades)) {

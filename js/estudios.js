@@ -10,7 +10,8 @@ const ESTUDIOS = [
   {
     id:       "estudio-a-gdl",
     slug:     "estudio-a-el-cenzontle",
-    nombre:   "Estudio A — El Cenzontle",
+    disponible: false,
+    nombre:   "Estudio A — Colibrí",
     ciudad:   "gdl",
     zona:     "La Perla, Guadalajara",
     tipo:     "estudio",
@@ -45,7 +46,8 @@ const ESTUDIOS = [
   {
     id:       "estudio-b-gdl",
     slug:     "estudio-b-gdl",
-    nombre:   "Estudio B",
+    disponible: false,
+    nombre:   "Estudio B — Canario",
     ciudad:   "gdl",
     zona:     "La Perla, Guadalajara",
     tipo:     "estudio",
@@ -80,7 +82,7 @@ const ESTUDIOS = [
   {
     id:       "estudio-c-gdl",
     slug:     "estudio-c-gdl",
-    nombre:   "Estudio C",
+    nombre:   "Estudio C — Gorrión",
     ciudad:   "gdl",
     zona:     "La Perla, Guadalajara",
     tipo:     "estudio",
@@ -112,7 +114,8 @@ const ESTUDIOS = [
   {
     id:       "estudio-d-gdl",
     slug:     "estudio-d-gdl",
-    nombre:   "Estudio D",
+    disponible: false,
+    nombre:   "Estudio D — Cacatúas",
     ciudad:   "gdl",
     zona:     "La Perla, Guadalajara",
     tipo:     "estudio",

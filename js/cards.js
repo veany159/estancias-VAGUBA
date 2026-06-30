@@ -135,6 +135,7 @@ const CARDS = {
     <div class="prop-card__media">
       <span class="prop-card__num">№ ${num}</span>
       ${isAirbnb ? `<span class="prop-card__badge prop-card__badge--airbnb">Airbnb</span>` : ''}
+      ${estudio.disponible === false ? `<span class="prop-card__badge prop-card__badge--ocupada" style="position:absolute;top:12px;right:12px;background:var(--color-teja,#8B2E0A);color:#F5EFE0;padding:.28rem .6rem;font-size:.7rem;letter-spacing:.05em;text-transform:uppercase;border-radius:3px;z-index:3;">${(typeof I18N!=='undefined'&&I18N.currentLang==='en')?'Booked':'Ocupada'}</span>` : ''}
       <img class="prop-card__image"
            src="${img}"
            alt="${estudio.nombre}"
