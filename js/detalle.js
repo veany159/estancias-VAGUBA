@@ -35,12 +35,20 @@
         note: tr('prop.precio_nota_consulta')
       };
     }
-    const formatted = new Intl.NumberFormat('es-MX', { minimumFractionDigits: 0, maximumFractionDigits: 2 }).format(estudio.precio);
+    const fmt = (n) => new Intl.NumberFormat('es-MX', { minimumFractionDigits: 0, maximumFractionDigits: 2 }).format(n);
     const unidad = estudio.unidad === 'noche'
       ? tr('estudio.precio_noche')
       : tr('estudio.precio_mes');
+    const en = (typeof I18N !== 'undefined' && I18N.currentLang === 'en');
+    const hasPromo = estudio.precio_regular && estudio.precio_regular > estudio.precio;
+    let html = `$${fmt(estudio.precio)} <small>MXN</small> <span class="prop-hero__price-unit">${unidad}</span>`;
+    if (hasPromo) {
+      const tag = `<span class="prop-hero__promo-tag" style="display:inline-block;background:var(--color-mostaza,#D4920A);color:#2B2B2B;font-size:.58rem;letter-spacing:.06em;text-transform:uppercase;padding:.3em .7em;border-radius:3px;font-family:var(--font-body);">${en ? 'Summer deal' : 'Promoción de verano'}</span>`;
+      const reg = `<span class="prop-hero__price-regular" style="display:block;margin-top:.3rem;font-size:.48em;color:var(--text-muted);font-family:var(--font-body);">${en ? 'Regular' : 'Antes'} <s>$${fmt(estudio.precio_regular)} MXN</s></span>`;
+      html = `${tag}<br>${html}${reg}`;
+    }
     return {
-      html: `$${formatted} <small>MXN</small> <span class="prop-hero__price-unit">${unidad}</span>`,
+      html,
       note: tr('prop.precio_nota_' + (estudio.unidad === 'noche' ? 'noche' : 'mes'))
     };
   }
@@ -173,6 +181,21 @@
       const key = el.dataset.showIf;
       if (estudio[key]) el.hidden = false;
     });
+
+    // ── Precio: re-aplicar al cambiar idioma (unidad + promoción) ──
+    {
+      const priceEl = qs('[data-bind="precio_html"]');
+      const noteEl = qs('[data-bind="precio_nota"]');
+      const applyPrice = () => {
+        const p = formatPrecio(estudio);
+        if (priceEl) priceEl.innerHTML = p.html;
+        if (noteEl) noteEl.textContent = p.note;
+      };
+      if (!window._priceLangBound) {
+        window._priceLangBound = true;
+        window.addEventListener('ev:langchange', applyPrice);
+      }
+    }
 
     // ── Disponibilidad: aviso "Ocupada por el momento" ──
     if (estudio.disponible === false) {

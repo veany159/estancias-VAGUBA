@@ -102,9 +102,14 @@ const CARDS = {
       ? estudio.precio.toLocaleString('es-MX')
       : estudio.precio.toLocaleString('es-MX', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
     const unitKey = `estudio.precio_${estudio.unidad}`;
-    return `<span class="prop-card__price">
+    const en = (typeof I18N !== 'undefined' && I18N.currentLang === 'en');
+    const hasPromo = estudio.precio_regular && estudio.precio_regular > estudio.precio;
+    const regFmt = hasPromo ? (estudio.precio_regular % 1 === 0 ? estudio.precio_regular.toLocaleString('es-MX') : estudio.precio_regular.toLocaleString('es-MX', { minimumFractionDigits: 2, maximumFractionDigits: 2 })) : '';
+    const promoTag = hasPromo ? `<span style="display:block;font-size:0.6rem;letter-spacing:0.05em;text-transform:uppercase;color:var(--color-mostaza,#D4920A);font-family:var(--font-body);margin-bottom:0.15rem;">${en ? 'Summer deal' : 'Promoción de verano'}</span>` : '';
+    const promoReg = hasPromo ? ` <s style="font-size:0.62em;color:var(--text-muted);margin-left:0.35rem;">$${regFmt}</s>` : '';
+    return `<span class="prop-card__price">${promoTag}
               $${precio} <small style="font-size:0.5em;letter-spacing:0.05em;color:var(--text-muted);font-style:normal;font-family:var(--font-body);">MXN</small>
-              <span class="prop-card__price-unit" data-i18n="${unitKey}">${estudio.unidad === 'noche' ? '/ noche' : '/ mes'}</span>
+              <span class="prop-card__price-unit" data-i18n="${unitKey}">${estudio.unidad === 'noche' ? '/ noche' : '/ mes'}</span>${promoReg}
             </span>`;
   },
 
