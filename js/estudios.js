@@ -114,7 +114,6 @@ const ESTUDIOS = [
   {
     id:       "estudio-d-gdl",
     slug:     "estudio-d-gdl",
-    disponible: false,
     nombre:   "Estudio D — Cacatúas",
     ciudad:   "gdl",
     zona:     "La Perla, Guadalajara",
