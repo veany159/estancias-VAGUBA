@@ -228,6 +228,11 @@ const ESTUDIOS = [
     id:       "estudio-a-black-pv",
     slug:     "estudio-a-black-puerto-vallarta",
     nombre:   "Estudio A Black — Pino",
+    renta_mensual: { precio: 8500, luz: 50 },
+    descripcion: {
+      es: "Estudio amueblado en Col. Primavera, Puerto Vallarta, ideal para una estancia cómoda y sin complicaciones. Cuenta con baño propio y boiler solar para agua caliente eficiente, además de aire acondicionado y WiFi. Su cocineta está lista para el día a día: mini refrigerador, microondas, cafetera, mini parrilla eléctrica, plancha, tarja y utensilios de cocina. Una opción práctica y bien ubicada, con estancia mínima de 3 noches.",
+      en: "Furnished studio in Col. Primavera, Puerto Vallarta — an easy, comfortable base for your stay. It has a private bathroom and a solar water heater for efficient hot water, plus air conditioning and WiFi. The kitchenette is ready for everyday life: mini fridge, microwave, coffee maker, electric hot plate, iron, sink and kitchen utensils. A practical, well-located choice, with a 3-night minimum."
+    },
     ciudad:   "pv",
     zona:     "Col. Primavera, Puerto Vallarta",
     tipo:     "estudio",
@@ -238,7 +243,7 @@ const ESTUDIOS = [
     fotos:    null,
     amenidades: [
       "Baño propio",
-      "Regadera eléctrica",
+      "Boiler solar",
       "Mini refrigerador",
       "Microondas",
       "Cafetera",
@@ -263,6 +268,11 @@ const ESTUDIOS = [
     id:       "estudio-b-black-pv",
     slug:     "estudio-b-black-puerto-vallarta",
     nombre:   "Estudio B Black — Cerezo",
+    renta_mensual: { precio: 9500, luz: 50 },
+    descripcion: {
+      es: "Cómodo estudio amueblado en Col. Primavera, Puerto Vallarta, pensado para estancias tranquilas y bien equipadas. Tiene baño propio, boiler solar, aire acondicionado y WiFi, además de una cocineta funcional con mini refrigerador, microondas, cafetera, mini parrilla eléctrica, plancha, tarja y utensilios. Un espacio ideal para descansar o trabajar cerca de todo, con estancia mínima de 3 noches.",
+      en: "Comfortable furnished studio in Col. Primavera, Puerto Vallarta, designed for calm, well-equipped stays. It offers a private bathroom, solar water heater, air conditioning and WiFi, plus a functional kitchenette with mini fridge, microwave, coffee maker, electric hot plate, iron, sink and utensils. An ideal spot to rest or work close to everything, with a 3-night minimum."
+    },
     ciudad:   "pv",
     zona:     "Col. Primavera, Puerto Vallarta",
     tipo:     "estudio",
@@ -273,7 +283,7 @@ const ESTUDIOS = [
     fotos:    null,
     amenidades: [
       "Baño propio",
-      "Regadera eléctrica",
+      "Boiler solar",
       "Mini refrigerador",
       "Microondas",
       "Cafetera",
@@ -298,6 +308,11 @@ const ESTUDIOS = [
     id:       "estudio-c-black-pv",
     slug:     "estudio-c-black-puerto-vallarta",
     nombre:   "Estudio C Black — Roble",
+    renta_mensual: { precio: 10000, luz: 50 },
+    descripcion: {
+      es: "Estudio amueblado en Col. Primavera, Puerto Vallarta, listo para entrar y disfrutar. Incluye baño propio, boiler solar para agua caliente, aire acondicionado y WiFi, junto con una cocineta equipada: mini refrigerador, microondas, cafetera, mini parrilla eléctrica, plancha, tarja y utensilios de cocina. Una alternativa cómoda y accesible para tu estancia en Vallarta, con mínimo de 3 noches.",
+      en: "Furnished studio in Col. Primavera, Puerto Vallarta, ready to move in and enjoy. It includes a private bathroom, solar water heater, air conditioning and WiFi, along with an equipped kitchenette: mini fridge, microwave, coffee maker, electric hot plate, iron, sink and kitchen utensils. A comfortable, affordable option for your stay in Vallarta, with a 3-night minimum."
+    },
     ciudad:   "pv",
     zona:     "Col. Primavera, Puerto Vallarta",
     tipo:     "estudio",
@@ -308,7 +323,7 @@ const ESTUDIOS = [
     fotos:    null,
     amenidades: [
       "Baño propio",
-      "Regadera eléctrica",
+      "Boiler solar",
       "Mini refrigerador",
       "Microondas",
       "Cafetera",

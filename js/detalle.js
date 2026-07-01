@@ -241,14 +241,52 @@
       }
       const applyMensual = () => {
         const en = (typeof I18N !== 'undefined' && I18N.currentLang === 'en');
-        if (nota) nota.textContent = en
-          ? 'Also available monthly — ask us about the monthly rate.'
-          : 'También se renta por mes — pregunta por la tarifa mensual.';
+        if (!nota) return;
+        const rm = estudio.renta_mensual;
+        if (rm && typeof rm === 'object' && rm.precio) {
+          const fmt = new Intl.NumberFormat('es-MX').format(rm.precio);
+          const luz = rm.luz ? (en ? (' · + ' + rm.luz + '% of the electricity bill') : (' · + ' + rm.luz + '% del recibo de luz')) : '';
+          nota.innerHTML = (en ? '<strong>Also monthly:</strong> $' : '<strong>También por mes:</strong> $') + fmt + (en ? ' MXN/month' : ' MXN/mes') + luz;
+        } else {
+          nota.textContent = en
+            ? 'Also available monthly — ask us about the monthly rate.'
+            : 'También se renta por mes — pregunta por la tarifa mensual.';
+        }
       };
       applyMensual();
       if (!window._mensualLangBound) {
         window._mensualLangBound = true;
         window.addEventListener('ev:langchange', applyMensual);
+      }
+    }
+
+    // ── Descripción (debajo de las fotos, estilo Airbnb) ──
+    if (estudio.descripcion) {
+      const anchorAmen = qs('.prop-amenidades');
+      let sec = qs('.prop-descripcion');
+      if (!sec && anchorAmen && anchorAmen.parentNode) {
+        sec = document.createElement('section');
+        sec.className = 'section section--sm prop-descripcion';
+        sec.innerHTML = '<div class="container">'
+          + '<h2 class="prop-section__title prop-descripcion__title" style="margin:0 0 .6rem;"></h2>'
+          + '<p class="prop-descripcion__text" style="max-width:62ch;margin:0;line-height:1.75;color:var(--color-carbon,#2B2B2B);"></p>'
+          + '</div>';
+        anchorAmen.parentNode.insertBefore(sec, anchorAmen);
+      }
+      const applyDesc = () => {
+        const en = (typeof I18N !== 'undefined' && I18N.currentLang === 'en');
+        const dd = estudio.descripcion;
+        const txt = (dd && typeof dd === 'object') ? (en ? dd.en : dd.es) : dd;
+        const s = qs('.prop-descripcion');
+        if (s) {
+          s.querySelector('.prop-descripcion__title').textContent = en ? 'Description' : 'Descripción';
+          s.querySelector('.prop-descripcion__text').textContent = txt || '';
+        }
+      };
+      applyDesc();
+      if (!window._descLangBound) {
+        window._descLangBound = true;
+        window.addEventListener('ev:langchange', applyDesc);
       }
     }
 
