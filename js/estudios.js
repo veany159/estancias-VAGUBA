@@ -333,7 +333,7 @@ const ESTUDIOS = [
   {
     id:       "departamento-los-sauces",
     slug:     "departamento-los-sauces-puerto-vallarta",
-    nombre:   "Departamento Los Sauces",
+    nombre:   "Departamento Claude",
     ciudad:   "pv",
     zona:     "Fracc. Los Sauces, Puerto Vallarta",
     tipo:     "departamento",
