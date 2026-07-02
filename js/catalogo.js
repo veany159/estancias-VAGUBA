@@ -56,6 +56,10 @@
     const empty = document.querySelector('.cat-empty');
     if (empty) empty.hidden = list.length > 0;
 
+    // Intro de Guadalajara (solo visible con el filtro gdl)
+    const gdlIntro = document.getElementById('gdl-intro');
+    if (gdlIntro) gdlIntro.hidden = filter !== 'gdl';
+
     // Re-aplicar i18n a los textos nuevos
     if (typeof I18N !== 'undefined' && I18N.apply) I18N.apply(I18N.currentLang);
 
