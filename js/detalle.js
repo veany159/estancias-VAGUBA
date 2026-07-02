@@ -49,7 +49,9 @@
     }
     return {
       html,
-      note: tr('prop.precio_nota_' + (estudio.unidad === 'noche' ? 'noche' : 'mes'))
+      note: estudio.nota_precio
+        ? (en ? estudio.nota_precio.en : estudio.nota_precio.es)
+        : tr('prop.precio_nota_' + (estudio.unidad === 'noche' ? 'noche' : 'mes'))
     };
   }
 
