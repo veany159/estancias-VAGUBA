@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Propiedades — Estancias Vaguba</title>
+<meta name="description" content="Catálogo completo de estancias amuebladas en Puerto Vallarta, Bahía de Banderas y Guadalajara. Filtra por destino y encuentra la que se ajusta a tu temporada.">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Propiedades — Estancias Vaguba">
+<meta property="og:description" content="Catálogo de estancias amuebladas en el Pacífico mexicano.">
+<meta property="og:locale" content="es_MX">
+
+<!-- Iconos -->
+<link rel="icon" type="image/png" href="img/favicon-dark.png">
+<link rel="apple-touch-icon" href="img/favicon-dark.png">
+
+<!-- Fuentes -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@400;500&display=swap">
+
+<!-- CSS -->
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/catalogo.css">
+
+</head>
+<body>
+
+  <!-- Navbar (inyectado por nav.js) -->
+  <div id="nav-placeholder"></div>
+
+  <!-- ═══════════════════════════════════════════════════
+       HEADER EDITORIAL — título de catálogo
+  ═══════════════════════════════════════════════════ -->
+  <header class="cat-header section section--sm">
+    <div class="container">
+      <div class="cat-header__inner">
+        <div class="section-head__eyebrow-wrap">
+          <span class="section-head__number" data-i18n="cat.number">— 02 / Catálogo</span>
+          <span class="section-head__rule" aria-hidden="true"></span>
+        </div>
+        <h1 class="cat-header__title">
+          <span data-i18n="cat.title_a">Todas las</span>
+          <em data-i18n="cat.title_b">estancias</em>
+        </h1>
+        <p class="cat-header__lead" data-i18n="cat.lead">
+          Diez propiedades en tres destinos. Filtra por ciudad para acotar tu búsqueda. Las fechas se sincronizan con Airbnb — lo que ves disponible, lo está.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════
+       FILTROS (pestañas por ciudad)
+  ═══════════════════════════════════════════════════ -->
+  <nav class="cat-filters" aria-label="Filtrar por destino">
+    <div class="container">
+      <ul class="cat-filters__list" role="tablist">
+        <li><button class="cat-filter cat-filter--active" data-filter="todas" role="tab" aria-selected="true"><span data-i18n="cat.filter.todas">Todas</span> <span class="cat-filter__count" data-count="todas"></span></button></li>
+        <li><button class="cat-filter" data-filter="pv"    role="tab" aria-selected="false"><span data-i18n="cat.filter.pv">Puerto Vallarta</span> <span class="cat-filter__count" data-count="pv"></span></button></li>
+        <li><button class="cat-filter" data-filter="bahia" role="tab" aria-selected="false"><span data-i18n="cat.filter.bahia">Bahía de Banderas</span> <span class="cat-filter__count" data-count="bahia"></span></button></li>
+        <li><button class="cat-filter" data-filter="gdl"   role="tab" aria-selected="false"><span data-i18n="cat.filter.gdl">Guadalajara</span> <span class="cat-filter__count" data-count="gdl"></span></button></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════════
+       GRID DE PROPIEDADES
+  ═══════════════════════════════════════════════════ -->
+  <!-- ═══════════════════════════════════════════════════
+       INTRO — La casa de la tía Evangelina (solo Guadalajara)
+  ═══════════════════════════════════════════════════ -->
+  <section class="section section--sm gdl-intro" id="gdl-intro" aria-labelledby="gdl-intro-h" hidden>
+    <div class="container container--reading">
+      <span class="section-head__number" style="color:var(--mostaza-d);" data-i18n="gdl.intro.eyebrow">— La Perla, Guadalajara</span>
+      <h2 id="gdl-intro-h" class="cat-cta__title" style="margin:.3rem 0 1.1rem;" data-i18n="gdl.intro.titulo">La casa de la tía Evangelina</h2>
+      <p class="cat-cta__lead" style="margin:0 0 1.4rem;" data-i18n="gdl.intro.historia">En la colonia La Perla, en Guadalajara, hay una casa que siempre estuvo llena de vida y de cantos. Era la casa de la tía Evangelina, y a ella le encantaban los pájaros: los cuidaba, los escuchaba cada mañana y llenaban de color cada rincón. Hoy la casa sigue en pie, convertida en cuatro estudios para recibir huéspedes, y en su honor cada uno lleva el nombre de un ave —Colibrí, Canario, Gorrión y Cacatúas—, para que su cariño siga acompañando a quien se queda aquí.</p>
+      <h3 style="font-family:var(--font-display,'Cormorant Garamond',serif);font-weight:400;font-size:1.35rem;margin:1.6rem 0 .5rem;color:var(--color-carbon,#2B2B2B);" data-i18n="gdl.intro.inmueble_t">El inmueble</h3>
+      <p style="line-height:1.75;margin:0 0 1.2rem;color:var(--color-carbon,#2B2B2B);" data-i18n="gdl.intro.inmueble">Es una casa familiar cuya planta alta alberga los cuatro estudios. Se sube por escaleras al segundo piso, donde un recibidor de uso común da paso a las tres primeras puertas —Colibrí (A), Canario (B) y Gorrión (C)—; Cacatúas (D) está pasando un pasillo. Los estudios A y B cuentan con balcón. Como áreas comunes hay recibidor y un patio de servicio con lavadora y lavadero, con servicio de limpieza una vez por semana. Todos los estudios cuentan con WiFi.</p>
+      <h3 style="font-family:var(--font-display,'Cormorant Garamond',serif);font-weight:400;font-size:1.35rem;margin:1.6rem 0 .5rem;color:var(--color-carbon,#2B2B2B);" data-i18n="gdl.intro.seguro_t">Familiar y seguro</h3>
+      <p style="line-height:1.75;margin:0;color:var(--color-carbon,#2B2B2B);" data-i18n="gdl.intro.seguro">La seguridad es muy importante para nosotros: no se admiten visitas, solo huéspedes. Cada estudio recibe llave de la puerta de ingreso, del cancel que da al recibidor y de su propia chapa.</p>
+    </div>
+  </section>
+
+  <main class="cat-grid-section section">
+    <div class="container">
+      <div class="prop-grid" data-prop-grid="all">
+        <!-- cards inyectadas por cards.js -->
+      </div>
+
+      <!-- Estado vacío (solo se muestra si filtro no tiene resultados) -->
+      <div class="cat-empty" hidden>
+        <p data-i18n="cat.empty">No hay propiedades en este destino por ahora.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════
+       CTA — ¿no encuentras lo que buscas?
+  ═══════════════════════════════════════════════════ -->
+  <section class="section section--sm cat-cta" aria-labelledby="cat-cta-h">
+    <div class="container container--reading" style="text-align:center;">
+      <span class="section-head__number" style="color:var(--mostaza-d);">— Pregunta</span>
+      <h2 id="cat-cta-h" class="cat-cta__title">
+        <span data-i18n="cat.cta.title_a">¿Buscas algo</span>
+        <em data-i18n="cat.cta.title_b">específico</em>?
+      </h2>
+      <p class="cat-cta__lead" data-i18n="cat.cta.lead">
+        Si necesitas una estadía con condiciones particulares — fechas largas, mascotas, espacios para trabajar — escríbenos. Conocemos cada propiedad de primera mano.
+      </p>
+      <div class="cat-cta__actions">
+        <a href="contacto.html" class="btn btn--primary" data-i18n="cat.cta.contact">Escríbenos</a>
+        <a href="https://wa.me/523221399526" target="_blank" rel="noopener" class="btn btn--ghost" data-i18n="cat.cta.whatsapp">WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer (inyectado por nav.js) -->
+  <div id="footer-placeholder"></div>
+
+  <!-- ═══════════════════════════════════════════════════
+       Scripts — orden: i18n, estudios, cards, nav
+  ═══════════════════════════════════════════════════ -->
+  <script src="js/i18n.js"></script>
+  <script src="js/estudios.js"></script>
+  <script src="js/cards.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/catalogo.js"></script>
+
+</body>
+</html>
