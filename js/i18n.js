@@ -27,9 +27,9 @@ const TRANSLATIONS = {
     "hero.meta2_label":      "Destinos",
     "hero.meta3_label":      "Estancia mínima",
     "hero.meta3_value":      "3 noches",
-    "hero.coord":            "20.65°N · 105.22°O",
+    "hero.coord":            "20.78°N · 105.36°O",
     "hero.card_eyebrow":     "Destacada",
-    "hero.card_title":       "Casa Heidi, Bahía de Banderas",
+    "hero.card_title":       "Casa Elisa, Bahía de Banderas",
     "hero.card_meta":        "5 huéspedes · 2 hab · A/C",
 
     /* ── CTAs / botones ─────────────────────────── */
@@ -371,9 +371,9 @@ const TRANSLATIONS = {
     "hero.meta2_label":      "Destinations",
     "hero.meta3_label":      "Min. stay",
     "hero.meta3_value":      "3 nights",
-    "hero.coord":            "20.65°N · 105.22°W",
+    "hero.coord":            "20.78°N · 105.36°W",
     "hero.card_eyebrow":     "Featured",
-    "hero.card_title":       "Casa Heidi, Bahía de Banderas",
+    "hero.card_title":       "Casa Elisa, Bahía de Banderas",
     "hero.card_meta":        "5 guests · 2 bed · A/C",
 
     /* ── CTAs / buttons ─────────────────────────── */
