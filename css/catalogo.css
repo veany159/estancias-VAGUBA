@@ -31,6 +31,14 @@
   max-width: 68ch;
 }
 
+.cat-header__lead2 {
+  font-size: var(--fs-base);
+  line-height: var(--lh-relaxed);
+  color: var(--text-soft);
+  max-width: 68ch;
+  margin-top: var(--space-md);
+}
+
 /* ── Intro GDL (La casa de la tía Evangelina) ─────── */
 .gdl-intro {
   padding-block: clamp(2.5rem, 5vw, 4rem);
