@@ -43,18 +43,17 @@
 }
 
 .gdl-intro__inner {
-  max-width: 100%;
+  width: 100%;
 }
 
 .gdl-intro__inner p {
-  max-width: 80ch;
+  max-width: 100%;
 }
 
 .gdl-intro p {
   font-size: var(--fs-md);
   line-height: var(--lh-relaxed);
   color: var(--text-soft);
-  max-width: 72ch;
   margin-bottom: var(--space-sm);
   text-align: left;
 }
