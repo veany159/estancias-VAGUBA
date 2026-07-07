@@ -35,7 +35,7 @@
   font-size: var(--fs-base);
   line-height: var(--lh-relaxed);
   color: var(--text-soft);
-  max-width: 68ch;
+  max-width: 100%;
   margin-top: var(--space-md);
 }
 
