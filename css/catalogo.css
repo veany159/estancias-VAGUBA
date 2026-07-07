@@ -43,7 +43,11 @@
 }
 
 .gdl-intro__inner {
-  max-width: 760px;
+  max-width: 100%;
+}
+
+.gdl-intro__inner p {
+  max-width: 80ch;
 }
 
 .gdl-intro p {
