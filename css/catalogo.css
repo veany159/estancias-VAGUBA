@@ -68,12 +68,41 @@
   text-align: left;
 }
 
-.gdl-intro h3 {
+.gdl-intro h3,
+.pv-intro h3 {
   font-family: var(--font-display);
-  font-weight: 400;
-  font-size: var(--fs-lg);
+  font-weight: 600;
+  font-size: var(--fs-xl);
   color: var(--text);
   margin: var(--space-lg) 0 var(--space-xs);
+  text-align: left;
+  letter-spacing: var(--ls-tight);
+}
+
+/* ── Intro PV (Casa Heidi) — hereda estilos de gdl-intro ── */
+.pv-intro {
+  padding-block: clamp(2.5rem, 5vw, 4rem);
+  border-bottom: 1px solid var(--line);
+  margin-bottom: clamp(1rem, 3vw, 2rem);
+}
+
+.pv-intro .container { display: block; }
+
+.pv-intro p {
+  font-size: var(--fs-md);
+  line-height: var(--lh-relaxed);
+  color: var(--text-soft);
+  margin-bottom: var(--space-sm);
+  text-align: left;
+}
+
+.pv-intro h2 {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(1.875rem, 4vw, 2.75rem);
+  line-height: 1.15;
+  color: var(--text);
+  margin: var(--space-xs) 0 var(--space-md);
   text-align: left;
 }
 
