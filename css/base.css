@@ -22,7 +22,7 @@ body {
   font-family: var(--font-body);
   font-size: var(--fs-base);
   font-weight: 400;
-  line-height: var(--lh-normal);
+  line-height: var(--lh-relaxed);
   color: var(--text);
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
@@ -62,7 +62,7 @@ h5 { font-size: var(--fs-lg); font-weight: 400; }
 h6 { font-size: var(--fs-md); font-weight: 400; }
 
 p { line-height: var(--lh-relaxed); }
-p + p { margin-top: var(--space-sm); }
+p + p { margin-top: var(--space-md); }
 
 .lead {
   font-size: var(--fs-md);
@@ -126,10 +126,10 @@ p + p { margin-top: var(--space-sm); }
 .container--reading { max-width: 720px; }
 
 .section {
-  padding-block: clamp(4rem, 8vw, 7rem);
+  padding-block: clamp(4.5rem, 9vw, 8rem);
 }
-.section--lg { padding-block: clamp(5rem, 10vw, 9rem); }
-.section--sm { padding-block: clamp(2.5rem, 5vw, 4rem); }
+.section--lg { padding-block: clamp(5.5rem, 11vw, 10rem); }
+.section--sm { padding-block: clamp(3rem, 5.5vw, 4.5rem); }
 .section--alt { background: var(--bg-alt); }
 .section--elev { background: var(--bg-elev); }
 .section--dark {
