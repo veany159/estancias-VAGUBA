@@ -147,8 +147,8 @@ export default async (request, context) => {
     });
   }
 
+  // 1) Email al dueño — crítico, debe llegar siempre
   try {
-    // 1) Email al dueño
     await sendViaResend({
       to: adminTo,
       replyTo: data.email,
@@ -156,7 +156,15 @@ export default async (request, context) => {
       html: ownerHtml(data),
       from
     });
-    // 2) Acuse al huésped
+  } catch (err) {
+    console.error('Admin email failed:', err.message);
+    return new Response(JSON.stringify({ error: 'Email delivery failed' }), {
+      status: 502, headers: { ...cors, 'Content-Type': 'application/json' }
+    });
+  }
+
+  // 2) Acuse al huésped — opcional, no bloquea si falla
+  try {
     await sendViaResend({
       to: data.email,
       replyTo: adminTo,
@@ -166,15 +174,13 @@ export default async (request, context) => {
       html: guestHtml(data),
       from
     });
-    return new Response(JSON.stringify({ ok: true }), {
-      status: 200, headers: { ...cors, 'Content-Type': 'application/json' }
-    });
   } catch (err) {
-    console.error('Reservation send failed:', err.message);
-    return new Response(JSON.stringify({ error: 'Email delivery failed' }), {
-      status: 502, headers: { ...cors, 'Content-Type': 'application/json' }
-    });
+    console.warn('Guest email failed (non-critical):', err.message);
   }
+
+  return new Response(JSON.stringify({ ok: true }), {
+    status: 200, headers: { ...cors, 'Content-Type': 'application/json' }
+  });
 };
 
 export const config = { path: '/.netlify/functions/reservation' };
