@@ -60,6 +60,9 @@
     const gdlIntro = document.getElementById('gdl-intro');
     if (gdlIntro) gdlIntro.hidden = filter !== 'gdl';
 
+    const pvIntro = document.getElementById('pv-intro');
+    if (pvIntro) pvIntro.hidden = filter !== 'pv';
+
     // Re-aplicar i18n a los textos nuevos
     if (typeof I18N !== 'undefined' && I18N.apply) I18N.apply(I18N.currentLang);
 
