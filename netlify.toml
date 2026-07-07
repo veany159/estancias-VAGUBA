@@ -49,3 +49,22 @@
   from = "/ical/*"
   to   = "/.netlify/functions/ical-proxy?slug=:splat"
   status = 200
+
+# ── Canónico para propiedades.html: ignorar parámetros ?ciudad= para SEO
+[[headers]]
+  for = "/propiedades.html"
+  [headers.values]
+    Link = '<https://estanciasvaguba.com/propiedades.html>; rel="canonical"' 
+
+# ── Redirigir http://www. → https:// (refuerzo explícito para Google)
+[[redirects]]
+  from = "http://www.estanciasvaguba.com/*"
+  to   = "https://estanciasvaguba.com/:splat"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from = "https://www.estanciasvaguba.com/*"
+  to   = "https://estanciasvaguba.com/:splat"
+  status = 301
+  force  = true
