@@ -114,12 +114,17 @@ const ESTUDIOS = [
   {
     id:       "estudio-d-gdl",
     slug:     "estudio-d-gdl",
+    disponible: false,
     nombre:   "Estudio D — Cacatúas",
     ciudad:   "gdl",
     zona:     "La Perla, Guadalajara",
     tipo:     "estudio",
     precio:   6800,
     nota_precio: { es: "Tarifa para 2 personas. 1 persona: $5,800/mes.", en: "Rate for 2 guests. Single occupancy: $5,800/month." },
+    descripcion: {
+      es: "Estudio ocupado actualmente. Disponible de nuevo a partir de enero 2027 — escríbenos para apartar tu fecha.",
+      en: "Currently occupied. Available again starting January 2027 — message us to reserve your date."
+    },
     unidad:   "mes",
     airbnb:   null,
     fotos:    "https://drive.google.com/drive/folders/1Nm_c50TMJCnXNs9bjuiICctodJrqpbe4",
@@ -409,12 +414,12 @@ function formatPrecio(estudio) {
 function formatCondiciones(estudio) {
   const c = estudio.condiciones;
   const items = [];
-  if (c.huespedes)    items.push(`${c.huespedes} ${I18N.t('estudio.huespedes')}`);
+  if (c.huespedes) items.push(`${c.huespedes} ${I18N.t('estudio.huespedes')}`);
   if (c.habitaciones) items.push(`${c.habitaciones} ${c.habitaciones > 1 ? I18N.t('estudio.habitaciones_pl') : I18N.t('estudio.habitaciones')}`);
-  if (c.camas)        items.push(`${c.camas} ${c.camas > 1 ? I18N.t('estudio.camas_pl') : I18N.t('estudio.camas')}`);
-  if (c.banos)        items.push(`${c.banos} ${c.banos > 1 ? I18N.t('estudio.banos_pl') : I18N.t('estudio.banos')}`);
-  if (c.min_noches)   items.push(I18N.t('estudio.min_noches', { n: c.min_noches }));
-  if (c.min_meses)    items.push(I18N.t('estudio.min_meses', { n: c.min_meses }));
-  if (c.max_meses)    items.push(I18N.t('estudio.max_meses', { n: c.max_meses }));
+  if (c.camas) items.push(`${c.camas} ${c.camas > 1 ? I18N.t('estudio.camas_pl') : I18N.t('estudio.camas')}`);
+  if (c.banos) items.push(`${c.banos} ${c.banos > 1 ? I18N.t('estudio.banos_pl') : I18N.t('estudio.banos')}`);
+  if (c.min_noches) items.push(I18N.t('estudio.min_noches', { n: c.min_noches }));
+  if (c.min_meses) items.push(I18N.t('estudio.min_meses', { n: c.min_meses }));
+  if (c.max_meses) items.push(I18N.t('estudio.max_meses', { n: c.max_meses }));
   return items;
 }
