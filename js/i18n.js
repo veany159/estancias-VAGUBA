@@ -720,6 +720,16 @@ const I18N = {
   currentLang: 'es',
 
   init() {
+    // Si la página define window.__ev_page_lang, ese idioma tiene prioridad
+    // (usado en artículos del blog escritos en un idioma específico).
+    // No modifica localStorage — solo aplica para esta página.
+    if (window.__ev_page_lang === 'en' || window.__ev_page_lang === 'es') {
+      this.currentLang = window.__ev_page_lang;
+      this.apply(this.currentLang);
+      this._updateToggle();
+      this._bindToggle();
+      return;
+    }
     // Default es ES (marca mexicana). El usuario hace toggle a EN explícitamente.
     // Persistimos la elección para visitas posteriores.
     const saved = localStorage.getItem('ev_lang');
