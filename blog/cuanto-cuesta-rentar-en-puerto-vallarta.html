@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -136,6 +136,10 @@
 </script>
 
 <style>
+
+/* ── Bloques bilingües — controlados por html[lang] ── */
+html[lang="es"] .lang-en { display: none !important; }
+html[lang="en"] .lang-es { display: none !important; }
 /* ── Article-specific styles ─────────────────────────── */
 .article-wrap {
   max-width: 720px;
@@ -459,39 +463,63 @@
   <header class="article-hero">
     <div class="article-wrap">
 
-      <nav class="article-breadcrumb" aria-label="Breadcrumb">
+      <!-- BREADCRUMB bilingüe -->
+      <nav class="article-breadcrumb lang-en" aria-label="Breadcrumb">
         <a href="../index.html">Home</a>
         <span aria-hidden="true">/</span>
         <a href="../blog.html">Blog</a>
         <span aria-hidden="true">/</span>
         <span aria-current="page">Renting in Puerto Vallarta 2026</span>
       </nav>
+      <nav class="article-breadcrumb lang-es" aria-label="Ruta de navegación">
+        <a href="../index.html">Inicio</a>
+        <span aria-hidden="true">/</span>
+        <a href="../blog.html">Bitácora</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Rentar en Puerto Vallarta 2026</span>
+      </nav>
 
-      <span class="article-eyebrow">Expat &amp; Nomad Guide · Puerto Vallarta</span>
+      <!-- EYEBROW bilingüe -->
+      <span class="article-eyebrow lang-en">Expat &amp; Nomad Guide · Puerto Vallarta</span>
+      <span class="article-eyebrow lang-es">Guía para Expats y Nómadas · Puerto Vallarta</span>
 
-      <h1 class="article-title">
+      <!-- TÍTULO bilingüe -->
+      <h1 class="article-title lang-en">
         How Much Does It Cost<br>
         to Rent in Puerto Vallarta<br>
         <em style="font-style:italic; color:var(--terracota)">in 2026?</em>
       </h1>
+      <h1 class="article-title lang-es">
+        ¿Cuánto cuesta rentar<br>
+        en Puerto Vallarta<br>
+        <em style="font-style:italic; color:var(--terracota)">en 2026?</em>
+      </h1>
 
-      <p class="article-lead">
+      <!-- LEAD bilingüe -->
+      <p class="article-lead lang-en">
         Real numbers, by neighborhood, by length of stay.
         No Zillow estimates, no outdated forum posts —
         we own properties here and we're telling you what we actually charge.
       </p>
+      <p class="article-lead lang-es">
+        Números reales, por colonia, por duración de estancia.
+        Sin estimaciones de Zillow ni posts de foro desactualizados —
+        somos propietarios aquí y te decimos exactamente lo que cobramos.
+      </p>
 
+      <!-- META -->
       <div class="article-meta">
         <div class="article-meta__item">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          <span>August 24, 2026</span>
+          <span>24 de agosto, 2026</span>
         </div>
         <div class="article-meta__item">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          <span>8 min read</span>
+          <span class="lang-en">8 min read</span>
+          <span class="lang-es">8 min de lectura</span>
         </div>
         <div class="article-meta__item">
-          <span>By <strong>Estancias Vaguba</strong></span>
+          <span>Por <strong>Estancias Vaguba</strong></span>
         </div>
       </div>
 
@@ -503,9 +531,10 @@
        ARTICLE BODY
   ══════════════════════════════════════════════ -->
   <main class="article-body">
-    <div class="article-wrap">
 
-      <p>
+    <!-- ── VERSIÓN INGLÉS ─────────────────────── -->
+    <div class="article-wrap lang-en">
+<p>
         Every few months someone posts in a Facebook expat group asking what rent costs in Puerto Vallarta,
         and every few months they get 40 conflicting answers ranging from "$400 a month in a great apartment"
         to "you can't touch anything decent under $2,000." Both are technically true, which is to say neither is useful.
@@ -862,20 +891,358 @@
           </span>
         </div>
       </div>
+    </div>
+
+    <!-- ── VERSIÓN ESPAÑOL ────────────────────── -->
+    <div class="article-wrap lang-es">
+
+      <p>
+        Cada ciertos meses alguien publica en un grupo de Facebook de expats preguntando cuánto cuesta rentar en Puerto Vallarta,
+        y cada vez recibe 40 respuestas contradictorias que van desde "$400 dólares al mes en un departamento increíble"
+        hasta "no encuentras nada decente por menos de $2,000." Ambas son técnicamente ciertas, lo que quiere decir que ninguna es útil.
+      </p>
+      <p>
+        Operamos <strong>rentas amuebladas en Puerto Vallarta, Guadalajara y Bahía de Banderas</strong>.
+        No somos una plataforma, un blog ni un agregador — somos propietarios locales.
+        Lo que sigue son números reales, basados en lo que nosotros cobramos y en lo que vemos en nuestras colonias ahora mismo,
+        en agosto de 2026.
+      </p>
+
+      <h2>La respuesta corta: qué puedes esperar pagar</h2>
+
+      <p>
+        Puerto Vallarta ya no es barata para estándares mexicanos, pero sigue siendo dramáticamente
+        más accesible que ciudades costeras comparables en EE.UU. o Canadá. Así está el panorama honesto:
+      </p>
+
+      <table class="price-table" aria-label="Rangos de precio de renta en Puerto Vallarta 2026">
+        <thead>
+          <tr>
+            <th>Tipo</th>
+            <th>Por noche (Airbnb)</th>
+            <th>Por mes (directo)</th>
+            <th>Colonia</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Estudio amueblado</td>
+            <td>$820–$1,200 MXN</td>
+            <td>$8,000–$12,000 MXN</td>
+            <td>Col. Primavera, Versalles</td>
+          </tr>
+          <tr>
+            <td>Departamento 1 recámara</td>
+            <td>$1,200–$2,000 MXN</td>
+            <td>$12,000–$18,000 MXN</td>
+            <td>Versalles, 5 de Diciembre</td>
+          </tr>
+          <tr>
+            <td>Casa / depto. 2 recámaras</td>
+            <td>$1,500–$3,500 MXN</td>
+            <td>$15,000–$28,000 MXN</td>
+            <td>Los Sauces, Fluvial, Zona Romántica</td>
+          </tr>
+          <tr>
+            <td>Zona Romántica / Centro premium</td>
+            <td>$2,500–$6,000+ MXN</td>
+            <td>$22,000–$45,000+ MXN</td>
+            <td>Centro, Emiliano Zapata</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        Al tipo de cambio actual (~17–18 MXN/USD), un estudio amueblado por $8,000 MXN/mes
+        equivale a aproximadamente <strong>$450–$470 USD/mes</strong>.
+        Un departamento de dos recámaras en colonia residencial ronda los $900–$1,100 USD/mes.
+        La Zona Romántica es otro mundo — la gente paga $1,500–$2,500 USD por los mismos metros cuadrados,
+        puramente por la ubicación y la dirección.
+      </p>
+
+      <div class="pull-quote">
+        <p>
+          "El error más grande que cometen los expats es usar los precios de Airbnb como referencia.
+          Las tarifas por noche incluyen una comisión de plataforma del 14–20%, más ajuste de temporada.
+          Mensual, directo con el propietario, la matemática cambia completamente."
+        </p>
+      </div>
+
+      <h2>Precios por colonia — qué obtienes realmente</h2>
+
+      <h3>Colonia Primavera</h3>
+      <p>
+        Aquí están nuestros estudios, y seremos transparentes sobre por qué elegimos esta zona:
+        es genuinamente una de las mejores colonias en relación calidad-precio de la ciudad.
+        Primavera es residencial — sin bares turísticos, sin ruido de camiones, principalmente familias y profesionistas.
+        Está a unos <strong>15 minutos en coche del malecón</strong> y a distancia caminable de supermercados,
+        farmacias y buenos restaurantes locales.
+      </p>
+      <p>
+        Nuestros estudios tienen precio de <strong>$820 MXN/noche en Airbnb</strong>.
+        Para estancias de más de un mes, negociamos directo — generalmente queda entre
+        $8,000 y $10,000 MXN/mes dependiendo del estudio.
+        Incluye WiFi, A/C, cocineta, baño privado y limpieza semanal.
+        Llegas con maleta y empiezas a vivir.
+      </p>
+
+      <h3>Fraccionamiento Los Sauces</h3>
+      <p>
+        Zona residencial más al norte, popular entre familias y expats de larga estancia.
+        Los departamentos amueblados de 2 recámaras rondan $1,000–$1,200 MXN/noche en Airbnb.
+        Nuestro <a href="../propiedades/departamento-los-sauces-puerto-vallarta.html">Departamento Los Sauces</a>
+        tiene precio de <strong>$1,066 MXN/noche</strong> — capacidad para 5 personas, cocina completa,
+        A/C en todos los cuartos, TV y área de lavado. Para estancias mensuales, vale la pena preguntar directo.
+      </p>
+
+      <h3>Versalles</h3>
+      <p>
+        Una de las colonias más demandadas hoy. Ubicación central, se puede caminar a restaurantes
+        y al corredor hospitalario. Los estudios amueblados arrancan en $10,000–$14,000 MXN/mes.
+        Sin amueblar es más barato, pero entonces necesitas conseguir todo tú mismo.
+      </p>
+
+      <h3>Zona Romántica (Emiliano Zapata)</h3>
+      <p>
+        La más cara y la más orientada al turismo. Si vas una semana, la energía es inigualable.
+        Si planeas vivir y trabajar de forma remota tres meses, pagarás una prima considerable
+        por una ubicación que quizás no aprovechas al máximo.
+        Presupuesta $20,000–$40,000 MXN/mes para un departamento amueblado decente.
+      </p>
+
+      <h3>Fluvial Vallarta / Marina</h3>
+      <p>
+        Edificios modernos, buena seguridad, más cerca del aeropuerto.
+        Popular entre expats profesionistas y familias. Precios de rango medio a alto:
+        $15,000–$25,000 MXN/mes para un departamento amueblado de 2 recámaras.
+      </p>
+
+      <div class="tip-box">
+        <span class="tip-box__label">Tip local</span>
+        <p>
+          Si estás eligiendo entre Col. Primavera y Zona Romántica,
+          pregúntate con qué frecuencia irás realmente al malecón.
+          La mayoría de los residentes de larga estancia rápidamente establecen una rutina de barrio —
+          una buena cafetería, un mercado, un gimnasio — que no tiene nada que ver con la zona turística.
+          Los barrios tranquilos ofrecen mejor vida cotidiana. Guarda el Centro para los fines de semana.
+        </p>
+      </div>
+
+      <h2>Corto plazo vs largo plazo: dónde están los ahorros reales</h2>
+
+      <p>
+        Esta es la pregunta que más importa para nómadas digitales y expats que planean una estancia extendida.
+        Hagamos los números con honestidad.
+      </p>
+
+      <table class="price-table" aria-label="Comparación costo corto vs largo plazo">
+        <thead>
+          <tr>
+            <th>Escenario</th>
+            <th>Duración</th>
+            <th>Tarifa de plataforma</th>
+            <th>Renta mensual directa</th>
+            <th>Ahorro</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Estudio, Col. Primavera</td>
+            <td>30 noches</td>
+            <td>~$24,600 MXN</td>
+            <td>$8,000–$10,000 MXN</td>
+            <td><strong>$14,000–$16,000 MXN</strong></td>
+          </tr>
+          <tr>
+            <td>Depto. 2 rec., Los Sauces</td>
+            <td>30 noches</td>
+            <td>~$32,000 MXN</td>
+            <td>$16,000–$20,000 MXN</td>
+            <td><strong>$12,000–$16,000 MXN</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        La plataforma agrega entre 14 y 20% de comisión de servicio encima de lo que cobra el propietario.
+        En una estancia de un mes, eso suma dinero real — muchas veces más que una semana entera de renta adicional.
+        Por eso <strong>reservar directo con el propietario</strong> tiene sentido financiero
+        desde el momento en que tu estancia supera las dos semanas.
+      </p>
+      <p>
+        Eso no significa que Airbnb siempre sea mala opción. Para 3 a 7 noches, la plataforma ofrece
+        seguridad, reseñas y un proceso de disputa que vale la comisión. La lógica cambia
+        cuando planeas una estancia más larga y ya investigaste la propiedad.
+      </p>
+
+      <h2>Qué significa "amueblado" aquí</h2>
+
+      <p>
+        En México, "amueblado" puede significar desde un colchón y un ventilador hasta un departamento
+        completamente equipado listo para una oficina. Necesitas preguntar. Cuando nosotros decimos amueblado, significa:
+      </p>
+      <ul>
+        <li>Cama con sábanas, almohadas y toallas</li>
+        <li>Mini refrigerador o refrigerador completo</li>
+        <li>Microondas, cafetera, utensilios básicos</li>
+        <li>A/C (mini-split, no ventilador de techo)</li>
+        <li>WiFi de alta velocidad (el nuestro lo medimos — mínimo 50 Mbps de descarga)</li>
+        <li>Baño privado con agua caliente</li>
+        <li>Ropero / espacio de almacenamiento</li>
+        <li>Mesa o escritorio para trabajar</li>
+      </ul>
+      <p>
+        Lo que generalmente no incluye un estudio: lavadora/secadora (frecuentemente compartida o lavandería cercana),
+        y en algunos casos la factura de luz se cobra por separado.
+        Pregunta de antemano. Los que esconden estos detalles suelen tener más sorpresas.
+      </p>
+
+      <h2>Qué tener en cuenta</h2>
+
+      <h3>El engaño de la "reserva directa"</h3>
+      <p>
+        Algunos propietarios anuncian en Airbnb a cierto precio y luego, una vez en contacto,
+        te presionan a reservar "directo" a un precio apenas más bajo pero sin protección de plataforma.
+        La reserva directa legítima implica un contrato firmado, recibos y una política de cancelación clara.
+        Si alguien solo ofrece fotos de WhatsApp y transferencia en efectivo, retírate.
+      </p>
+
+      <h3>Facturas de luz en estudios</h3>
+      <p>
+        CFE (la empresa eléctrica nacional de México) cobra tarifas residenciales para el primer bloque
+        y significativamente más por consumo superior al umbral. Algunos propietarios dividen esto honestamente;
+        otros lo usan como costo oculto. Pregunta si la luz está incluida en la renta mensual,
+        y si no, cuál es la factura promedio. Un estudio con A/C en verano puede agregar fácilmente
+        $1,500–$3,000 MXN/mes a tus costos.
+      </p>
+
+      <h3>Estancias mínimas</h3>
+      <p>
+        Las rentas mensuales en colonias residenciales generalmente requieren un mínimo de 3 meses.
+        Algunos propietarios piden 6. Esto los protege de inquilinos rotativos y te da una tarifa
+        efectiva por noche más baja. Si solo planeas quedarte 1 o 2 meses,
+        Airbnb suele ser tu única opción realista — acepta la comisión,
+        o negocia directo con una propiedad específica en la que confíes.
+      </p>
+
+      <div class="pull-quote">
+        <p>
+          "Los que consiguen los mejores precios en Puerto Vallarta son los que llegan,
+          pasan una semana en un Airbnb para orientarse, y luego encuentran su lugar
+          de larga estancia en persona. Puedes negociar cosas por correo,
+          pero los tratos se cierran en persona."
+        </p>
+      </div>
+
+      <h2>Cómo se compara con Guadalajara y Bahía de Banderas</h2>
+
+      <p>
+        Como operamos en los tres destinos, podemos darte una comparación directa.
+      </p>
+
+      <table class="price-table" aria-label="Comparación de precios entre destinos">
+        <thead>
+          <tr>
+            <th>Destino</th>
+            <th>Estudio amueblado / mes</th>
+            <th>Ideal para</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>La Perla, Guadalajara</td>
+            <td>Desde $4,500 MXN/mes</td>
+            <td>Estudiantes, nómadas de larga estancia, profesionistas en rotación</td>
+          </tr>
+          <tr>
+            <td>Col. Primavera, Puerto Vallarta</td>
+            <td>$8,000–$10,000 MXN/mes</td>
+            <td>Acceso a playa, estancias cortas a medianas, parejas</td>
+          </tr>
+          <tr>
+            <td>Valle Dorado, Bahía de Banderas</td>
+            <td>$20,000–$25,000 MXN/mes (directo)</td>
+            <td>Familias, grupos, estancias largas en la playa</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        Guadalajara es la más accesible y la más genuinamente urbana — es una ciudad real,
+        con teatro, restaurantes, universidades y sistema de transporte público.
+        Puerto Vallarta es más caro pero ofrece el estilo de vida del Pacífico.
+        Bahía de Banderas, y específicamente Valle Dorado, es más tranquila y residencial,
+        ideal para quienes quieren proximidad a la playa sin el ruido del centro de PV.
+      </p>
+
+      <div class="article-cta" role="complementary" aria-label="Ver propiedades disponibles">
+        <div class="article-cta__text">
+          <h3>Tenemos propiedades en los tres destinos</h3>
+          <p>
+            Estudios desde $820/noche en Airbnb, o estancias mensuales negociadas directo.
+            Sin comisiones de plataforma. Sin intermediarios.
+          </p>
+        </div>
+        <a href="../propiedades.html" class="btn btn--ghost-light">Ver rentas disponibles</a>
+      </div>
+
+      <h2>Preguntas frecuentes</h2>
+
+      <h3>¿Se puede negociar la renta en Puerto Vallarta?</h3>
+      <p>
+        Sí, especialmente para estancias de 2 meses o más. La mayoría de los propietarios prefieren
+        un inquilino confiable por tres meses que estar persiguiendo huéspedes de Airbnb cada semana.
+        Llega preparado con un calendario claro, referencias si las tienes,
+        y sé directo sobre tu situación. La honestidad cierra tratos más rápido que el regateo.
+      </p>
+
+      <h3>¿Es Puerto Vallarta más caro que antes?</h3>
+      <p>
+        Sí. La ola de trabajo remoto de la pandemia, la depreciación del peso en 2022–2023,
+        y la demanda sostenida de canadienses y americanos han subido los precios significativamente desde 2020.
+        Un estudio que costaba $6,000 MXN/mes en 2020 ahora está en $9,000–$12,000.
+        Dicho esto, sigue muy por debajo de ciudades costeras comparables en California, Florida o BC.
+      </p>
+
+      <h3>¿Cuál es la manera más barata de rentar en Puerto Vallarta largo plazo?</h3>
+      <p>
+        Llega en persona, oriéntate una semana en un Airbnb, luego camina o maneja
+        las colonias residenciales (Primavera, Versalles, 5 de Diciembre, Fluvial)
+        buscando letreros de "Se Renta". Habla con los propietarios directamente.
+        Así es como los locales encuentran vivienda.
+        Encontrarás unidades sin amueblar más baratas que cualquier cosa en internet —
+        pero necesitarás equiparlas tú mismo, lo que agrega costo y tiempo.
+      </p>
+
+      <h3>¿Es seguro rentar directo sin Airbnb?</h3>
+      <p>
+        Con un propietario legítimo, sí. Obtén un contrato de arrendamiento firmado que especifique
+        la renta mensual, qué incluye, el monto del depósito y las condiciones de cancelación.
+        Paga por transferencia bancaria (SPEI/CoDi), no en efectivo, para tener comprobante.
+        Si un propietario se niega a firmar cualquier cosa, eso te dice todo lo que necesitas saber.
+      </p>
+
+      <div class="article-related">
+        <p class="article-related__title">Próximos artículos en la bitácora</p>
+        <div class="article-related__grid">
+          <span class="related-card" style="cursor:default; opacity:0.6">
+            <span class="related-card__tag">Guía de barrio</span>
+            <p class="related-card__title">Vivir en La Perla, Guadalajara: guía para nómadas digitales</p>
+          </span>
+          <span class="related-card" style="cursor:default; opacity:0.6">
+            <span class="related-card__tag">Estrategia</span>
+            <p class="related-card__title">Renta mensual vs Airbnb en Puerto Vallarta: lo que nadie te cuenta</p>
+          </span>
+        </div>
+      </div>
 
     </div>
+
   </main>
 
 
   <div id="footer-placeholder"></div>
 
-  <script>
-    /* Este artículo está escrito en inglés.
-       Forzamos currentLang = 'en' ANTES de que i18n.js corra su init(),
-       sin alterar el localStorage del usuario — solo sobrescribimos
-       la sesión de esta página. */
-    window.__ev_page_lang = 'en';
-  </script>
   <script src="../js/i18n.js"></script>
   <script src="../js/estudios.js"></script>
   <script src="../js/nav.js"></script>
