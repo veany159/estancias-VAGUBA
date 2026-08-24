@@ -84,8 +84,8 @@ const ESTUDIOS = [
     slug:     "estudio-c-gdl",
     disponible: false,
     descripcion: {
-      es: "Este estudio se encuentra actualmente rentado — en enero estará disponible. Escríbenos para apartar tu fecha.",
-      en: "This studio is currently rented — available in January. Message us to reserve your date."
+      es: "Ocupado hasta nuevo aviso. Escríbenos para conocer disponibilidad futura.",
+      en: "Occupied until further notice. Message us for future availability."
     },
     nombre:   "Estudio C — Gorrión",
     ciudad:   "gdl",
