@@ -24,7 +24,7 @@ const NAV = {
   renderNav() {
     const active = this.getActivePage();
     const cls = (p) => active === p ? 'nav__link active' : 'nav__link';
-    const base = /\/propiedades\//.test(location.pathname) ? '../' : '';
+    const base = /\/(propiedades|blog)\//.test(location.pathname) ? '../' : '';
 
     return `
 <nav class="nav" id="main-nav" role="navigation" aria-label="Navegación principal">
@@ -59,7 +59,7 @@ const NAV = {
   },
 
   renderFooter() {
-    const base = /\/propiedades\//.test(location.pathname) ? '../' : '';
+    const base = /\/(propiedades|blog)\//.test(location.pathname) ? '../' : '';
     return `
 <footer class="footer" role="contentinfo">
   <div class="container">
