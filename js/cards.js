@@ -31,7 +31,7 @@ const CARDS = {
      Formato: { 'slug': { numero: 'jpeg' } }
   */
   photoExt: {
-    'estudio-c-gdl': { 1: 'jpeg' }
+    'estudio-c-gdl': { 1: 'jpeg', 6: 'jpeg' }
   },
 
   /* Captions opcionales por foto: { slug: { numero: textoES } }
