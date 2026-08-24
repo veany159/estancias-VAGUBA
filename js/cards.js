@@ -26,6 +26,14 @@ const CARDS = {
     'departamento-los-sauces-puerto-vallarta':  10
   },
 
+  /* Extensión alternativa para fotos específicas por número.
+     Si una foto tiene extensión .jpeg en vez de .jpg, se registra aquí.
+     Formato: { 'slug': { numero: 'jpeg' } }
+  */
+  photoExt: {
+    'estudio-c-gdl': { 1: 'jpeg' }
+  },
+
   /* Captions opcionales por foto: { slug: { numero: textoES } }
      El sitio muestra el caption en español por defecto.
      Si el slug/foto no tiene caption, no se muestra etiqueta. */
@@ -67,7 +75,8 @@ const CARDS = {
     if (this.hasRealPhotos[estudio.slug]) {
       const max = this.hasRealPhotos[estudio.slug];
       const idx = Math.min(Math.max(photoIndex, 1), max);
-      return this.imgPath(`${estudio.slug}-${idx}.jpg`);
+      const ext = (this.photoExt[estudio.slug] && this.photoExt[estudio.slug][idx]) || 'jpg';
+      return this.imgPath(`${estudio.slug}-${idx}.${ext}`);
     }
     const pool = {
       pv: [
