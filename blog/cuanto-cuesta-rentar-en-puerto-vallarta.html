@@ -869,6 +869,13 @@
 
   <div id="footer-placeholder"></div>
 
+  <script>
+    /* Este artículo está escrito en inglés.
+       Forzamos currentLang = 'en' ANTES de que i18n.js corra su init(),
+       sin alterar el localStorage del usuario — solo sobrescribimos
+       la sesión de esta página. */
+    window.__ev_page_lang = 'en';
+  </script>
   <script src="../js/i18n.js"></script>
   <script src="../js/estudios.js"></script>
   <script src="../js/nav.js"></script>
