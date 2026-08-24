@@ -53,29 +53,67 @@
         </p>
       </header>
 
-      <!-- Categorías (placeholder cards) -->
+      <!-- Artículos publicados -->
+      <section style="margin-bottom: var(--space-3xl);">
+
+        <p style="font-family:var(--font-body);font-size:var(--fs-2xs);font-weight:500;letter-spacing:var(--ls-xwide);text-transform:uppercase;color:var(--text-muted);margin-bottom:var(--space-xl);">
+          Latest articles
+        </p>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:var(--space-lg);">
+
+          <!-- Article 1 -->
+          <a href="blog/cuanto-cuesta-rentar-en-puerto-vallarta.html"
+             style="background:var(--marfil);border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden;text-decoration:none;display:block;transition:all 0.2s;">
+            <div style="padding:var(--space-xl) var(--space-xl) var(--space-lg);">
+              <span style="font-family:var(--font-body);font-size:var(--fs-2xs);font-weight:500;letter-spacing:var(--ls-wide);text-transform:uppercase;color:var(--terracota);display:block;margin-bottom:var(--space-md);">
+                Expat &amp; Nomad Guide · Puerto Vallarta
+              </span>
+              <h2 style="font-family:var(--font-display);font-style:italic;font-weight:400;font-size:var(--fs-xl);color:var(--text);line-height:1.2;margin:0 0 var(--space-md);">
+                How Much Does It Cost to Rent in Puerto Vallarta in 2026?
+              </h2>
+              <p style="font-size:var(--fs-sm);line-height:var(--lh-relaxed);color:var(--text-soft);margin:0 0 var(--space-lg);">
+                Real prices, by neighborhood, by length of stay.
+                Written by local property owners — not a blog aggregator.
+              </p>
+              <div style="display:flex;align-items:center;justify-content:space-between;padding-top:var(--space-md);border-top:1px solid var(--line);">
+                <span style="font-size:var(--fs-xs);color:var(--text-muted);">August 24, 2026 · 8 min</span>
+                <span style="font-size:var(--fs-xs);font-weight:500;color:var(--terracota);">Read →</span>
+              </div>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <!-- Categorías (próximos artículos) -->
+      <p style="font-family:var(--font-body);font-size:var(--fs-2xs);font-weight:500;letter-spacing:var(--ls-xwide);text-transform:uppercase;color:var(--text-muted);margin-bottom:var(--space-xl);">
+        Coming next
+      </p>
       <ul class="blog-cats">
 
         <li class="blog-cat">
-          <span class="blog-cat__num">№ 01</span>
-          <h2 class="blog-cat__title" data-i18n="blog.cat1.title">Guías de barrio</h2>
-          <p class="blog-cat__desc" data-i18n="blog.cat1.desc">
-            Dónde comer, qué evitar, los locales que vale la pena conocer. Sin filtros de turista.
-          </p>
-          <span class="blog-cat__badge" data-i18n="blog.coming">Próximamente</span>
-        </li>
-
-        <li class="blog-cat">
           <span class="blog-cat__num">№ 02</span>
-          <h2 class="blog-cat__title" data-i18n="blog.cat2.title">Vida de nómada digital</h2>
-          <p class="blog-cat__desc" data-i18n="blog.cat2.desc">
-            Cafés con WiFi de verdad, costos reales de vida, lo que nadie te cuenta de mudarte a México.
+          <h2 class="blog-cat__title">Living in La Perla, Guadalajara</h2>
+          <p class="blog-cat__desc">
+            The neighborhood guide for digital nomads. Where to eat, work, and live
+            in Guadalajara's most authentic colonia.
           </p>
-          <span class="blog-cat__badge" data-i18n="blog.coming">Próximamente</span>
+          <span class="blog-cat__badge">Coming soon</span>
         </li>
 
         <li class="blog-cat">
           <span class="blog-cat__num">№ 03</span>
+          <h2 class="blog-cat__title">Long-term rental vs Airbnb in Puerto Vallarta</h2>
+          <p class="blog-cat__desc">
+            What nobody tells you. The real cost difference, the risks on both sides,
+            and when each option actually makes sense.
+          </p>
+          <span class="blog-cat__badge">Coming soon</span>
+        </li>
+
+        <li class="blog-cat">
+          <span class="blog-cat__num">№ 04</span>
           <h2 class="blog-cat__title" data-i18n="blog.cat3.title">Crónicas del Pacífico</h2>
           <p class="blog-cat__desc" data-i18n="blog.cat3.desc">
             Historias de los lugares y las personas que dan textura a esta franja de costa.
