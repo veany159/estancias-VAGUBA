@@ -122,8 +122,8 @@ const ESTUDIOS = [
     precio:   6800,
     nota_precio: { es: "Tarifa para 2 personas. 1 persona: $5,800/mes.", en: "Rate for 2 guests. Single occupancy: $5,800/month." },
     descripcion: {
-      es: "Estudio ocupado actualmente. Disponible de nuevo a partir de enero 2027 — escríbenos para apartar tu fecha.",
-      en: "Currently occupied. Available again starting January 2027 — message us to reserve your date."
+      es: "En enero estará disponible — escríbenos para apartar tu fecha.",
+      en: "Available in January — message us to reserve your date."
     },
     unidad:   "mes",
     airbnb:   null,

@@ -215,11 +215,15 @@
       const applyOcupada = () => {
         const en = (typeof I18N !== 'undefined' && I18N.currentLang === 'en');
         if (aviso) {
+          // Si el estudio tiene descripcion personalizada, usarla como subtítulo
+          const subtitulo = estudio.descripcion
+            ? (en ? (estudio.descripcion.en || estudio.descripcion.es) : estudio.descripcion.es)
+            : (en ? 'Message us about future availability.' : 'Escríbenos para conocer disponibilidad futura.');
           aviso.innerHTML =
             '<strong style="color:var(--color-teja,#8B2E0A);">' +
-            (en ? 'Currently booked' : 'Ocupada por el momento') + '</strong><br>' +
+            (en ? 'Currently booked' : 'Este estudio se encuentra actualmente rentado') + '</strong><br>' +
             '<span style="color:var(--text-muted,#6b6b6b);">' +
-            (en ? 'Message us about future availability.' : 'Escríbenos para conocer disponibilidad futura.') +
+            subtitulo +
             '</span>';
         }
         if (cta) cta.textContent = en ? 'Check availability' : 'Consultar disponibilidad';
